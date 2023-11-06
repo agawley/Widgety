@@ -6,18 +6,41 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct ContentView: View {
+    @Environment(\.scenePhase) var scenePhase
+    @State private var events = Events()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView{
+            List{
+                Section{
+                    ForEach($events.items) {$event in
+                        NavigationLink(destination: DetailView(event: $event)) {
+                            Text(event.name)
+                        }
+                    }.onDelete { index in
+                        events.items.remove(atOffsets: index)
+                    }
+                }
+                Button {
+                    withAnimation {
+                        events.items.append(Event(id:UUID(), name: "End of school", date: Date()))
+                    }
+                } label: {
+                    Label("Add", systemImage: "plus")
+                }
+            }
+        }.onChange(of: scenePhase) {
+            if scenePhase == .background {
+                WidgetCenter.shared.reloadAllTimelines()
+            }
         }
-        .padding()
+        
     }
 }
+
 
 #Preview {
     ContentView()
