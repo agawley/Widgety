@@ -7,10 +7,18 @@
 
 import Foundation
 
+
 struct Event: Identifiable, Hashable, Codable {
     let id: UUID
     var name: String
     var date: Date
+    var color: ThemeColor
+    
+    static func daysUntilEvent(eventDate: Date, fromDate: Date) -> Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day], from: calendar.startOfDay(for: fromDate), to: calendar.startOfDay(for: eventDate))
+        return components.day!
+    }
 }
 
 @Observable

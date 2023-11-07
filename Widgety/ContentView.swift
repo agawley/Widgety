@@ -14,30 +14,35 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView{
-            List{
-                Section{
-                    ForEach($events.items) {$event in
-                        NavigationLink(destination: DetailView(event: $event)) {
-                            Text(event.name)
+                List{
+                    Section{
+                        ForEach($events.items) {$event in
+                            NavigationLink(destination: DetailView(event: $event)) {
+                                HStack {
+                                    Circle()
+                                        .fill(Theme.bgColor(theme: event.color))
+                                        .frame(width: 10 , height: 10)
+                                    Text(event.name)
+                                    
+                                }
+                            }
+                        }.onDelete { index in
+                            events.items.remove(atOffsets: index)
                         }
-                    }.onDelete { index in
-                        events.items.remove(atOffsets: index)
                     }
-                }
-                Button {
-                    withAnimation {
-                        events.items.append(Event(id:UUID(), name: "End of school", date: Date()))
+                    Button {
+                        withAnimation {
+                            events.items.append(Event(id:UUID(), name: "My new event", date: Date(), color: ThemeColor.allCases.randomElement()!))
+                        }
+                    } label: {
+                        Label("Add", systemImage: "plus")
                     }
-                } label: {
-                    Label("Add", systemImage: "plus")
-                }
-            }
+                }.navigationBarTitle("Countdowns")
         }.onChange(of: scenePhase) {
             if scenePhase == .background {
                 WidgetCenter.shared.reloadAllTimelines()
             }
         }
-        
     }
 }
 

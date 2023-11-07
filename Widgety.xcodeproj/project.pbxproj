@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		401B68B12AFA7C7500281D6B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B68B02AFA7C7500281D6B /* Theme.swift */; };
+		401B68B22AFA7C7500281D6B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B68B02AFA7C7500281D6B /* Theme.swift */; };
 		40C4E7F02AF817D00067CA63 /* WidgetyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E7EF2AF817D00067CA63 /* WidgetyApp.swift */; };
 		40C4E7F22AF817D00067CA63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E7F12AF817D00067CA63 /* ContentView.swift */; };
 		40C4E7F42AF817D30067CA63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C4E7F32AF817D30067CA63 /* Assets.xcassets */; };
@@ -48,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		401B68B02AFA7C7500281D6B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		40C4E7EC2AF817D00067CA63 /* Widgety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Widgety.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C4E7EF2AF817D00067CA63 /* WidgetyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetyApp.swift; sourceTree = "<group>"; };
 		40C4E7F12AF817D00067CA63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +117,7 @@
 				40C4E7F12AF817D00067CA63 /* ContentView.swift */,
 				40C4E8192AF8F5660067CA63 /* DetailView.swift */,
 				40C4E81B2AF90A980067CA63 /* Events.swift */,
+				401B68B02AFA7C7500281D6B /* Theme.swift */,
 				40C4E7F32AF817D30067CA63 /* Assets.xcassets */,
 				40C4E7F52AF817D30067CA63 /* Widgety.entitlements */,
 				40C4E7F62AF817D30067CA63 /* Preview Content */,
@@ -253,6 +257,7 @@
 			files = (
 				40C4E81C2AF90A980067CA63 /* Events.swift in Sources */,
 				40C4E7F22AF817D00067CA63 /* ContentView.swift in Sources */,
+				401B68B12AFA7C7500281D6B /* Theme.swift in Sources */,
 				40C4E81A2AF8F5670067CA63 /* DetailView.swift in Sources */,
 				40C4E7F02AF817D00067CA63 /* WidgetyApp.swift in Sources */,
 			);
@@ -264,6 +269,7 @@
 			files = (
 				40C4E81D2AF90A980067CA63 /* Events.swift in Sources */,
 				40C4E80A2AF818540067CA63 /* WidgetyWidgetBundle.swift in Sources */,
+				401B68B22AFA7C7500281D6B /* Theme.swift in Sources */,
 				40C4E80C2AF818540067CA63 /* WidgetyWidget.swift in Sources */,
 				40C4E80E2AF818540067CA63 /* AppIntent.swift in Sources */,
 			);
