@@ -34,14 +34,14 @@ struct Event: Identifiable, Hashable, Codable, AppEntity {
         return events
     }
     
-    func daysUntil( fromDate: Date) -> Int {
+    private func daysUntil(fromDate: Date) -> Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.day], from: calendar.startOfDay(for: fromDate), to: calendar.startOfDay(for: date))
         return components.day!
     }
     
     func timelineEntry(entryDate: Date) -> EventEntry {
-        return EventEntry(name: name, daysUntil: daysUntil(fromDate: Date()), date: entryDate,  color: color)
+        return EventEntry(name: name, daysUntil: daysUntil(fromDate: entryDate), date: entryDate,  color: color)
     }
 }
 
