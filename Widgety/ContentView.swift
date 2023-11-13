@@ -10,8 +10,12 @@ import WidgetKit
 
 struct ContentView: View {
     @Environment(\.scenePhase) var scenePhase
-    @State private var events = Events()
+    @State var events = Events()
     
+    private func handleUserActivity(_ userActivity: NSUserActivity) {
+        print(userActivity)
+        }
+        
     var body: some View {
         NavigationView{
                 List{
@@ -42,7 +46,7 @@ struct ContentView: View {
             if scenePhase == .background {
                 WidgetCenter.shared.reloadAllTimelines()
             }
-        }
+        }.onContinueUserActivity(NSUserActivityTypeBrowsingWeb, perform: handleUserActivity)
     }
 }
 

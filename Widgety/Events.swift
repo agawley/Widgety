@@ -68,10 +68,11 @@ class Events {
         didSet {
             timer.invalidate()
             timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false, block: { _ in
-                print("setA")
+                let start = Date().timeIntervalSince1970
                 if let encoded = try? JSONEncoder().encode(self.items) {
                     UserDefaults(suiteName: "group.org.gawley.widgety")!.set(encoded, forKey: "Events")
                 }
+                print(Date().timeIntervalSince1970 - start)
             })
         }
         

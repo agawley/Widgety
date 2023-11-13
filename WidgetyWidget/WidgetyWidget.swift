@@ -40,7 +40,7 @@ struct WidgetyWidgetEntryView : View {
     var entry: Provider.Entry
     
     var body: some View {
-        SmallWidgetView(entry: entry)
+        SmallWidgetView(entry: entry).widgetURL(URL(string: "widgety:///panda")!)
     }
 }
 
@@ -53,12 +53,13 @@ struct WidgetyWidget: Widget {
                 .containerBackground( for: .widget) {
                     ContainerRelativeShape().fill(Theme.bgColor(theme:entry.color)) }
         }.supportedFamilies([.systemSmall, .systemMedium])
+            .contentMarginsDisabled()
     }
 }
 
 #Preview(as: .systemSmall) {
     WidgetyWidget()
 } timeline: {
-    EventEntry(name: "end of the world", daysUntil: 1200, date: .now, color: ThemeColor.red)
+    EventEntry(name: "end of the world again", daysUntil: 1200, date: .now, color: ThemeColor.red)
     EventEntry(name: "end of the world", daysUntil: 0, date: .now, color: ThemeColor.purple)
 }

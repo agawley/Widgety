@@ -48,9 +48,9 @@ struct DetailView: View {
                     }
                 }
             }
-            VStack {
-                SmallWidgetView(entry: event.timelineEntry(entryDate: Date())).padding([.horizontal], 30).padding([.vertical], 20)
-            }.frame(width: 150, height: 150).background(Theme.bgColor(theme: event.color)).cornerRadius(25).padding(30)
+            HStack {
+                SmallWidgetView(entry: event.timelineEntry(entryDate: Date())).padding([.horizontal], 10).padding([.vertical], 10)
+            }.frame(width: 175, height: 175).background(Theme.bgColor(theme: event.color)).cornerRadius(25)
         }.background(Color(UIColor.systemGroupedBackground))
     }
 }
