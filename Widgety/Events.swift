@@ -9,6 +9,11 @@ import Foundation
 import WidgetKit
 import AppIntents
 
+enum RepeatOptions: String, CaseIterable, Identifiable, Codable, Hashable {
+    case never, weekly, monthly, yearly
+    var id: Self { self }
+}
+
 struct EventEntry: TimelineEntry {
     let name: String
     let daysUntil: Int
@@ -21,6 +26,7 @@ struct Event: Identifiable, Hashable, Codable, AppEntity {
     var name: String
     var date: Date
     var color: ThemeColor
+    var repeating: RepeatOptions = .never
     
     static var typeDisplayRepresentation: TypeDisplayRepresentation = "Event"
     static var defaultQuery = EventQuery()
@@ -36,8 +42,28 @@ struct Event: Identifiable, Hashable, Codable, AppEntity {
     
     private func daysUntil(fromDate: Date) -> Int {
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.day], from: calendar.startOfDay(for: fromDate), to: calendar.startOfDay(for: date))
-        return components.day!
+        let fromDate = calendar.startOfDay(for: fromDate)
+        let fromDateMinusOne = calendar.date(byAdding: .day, value: -1, to: fromDate)!
+        var toDate = calendar.startOfDay(for: date)
+        if (toDate < fromDate) {
+            switch repeating {
+            case .weekly:
+                toDate = calendar.nextDate(after: fromDateMinusOne, matching: calendar.dateComponents([.weekday], from: toDate), matchingPolicy: .nextTime)!
+            case .monthly:
+                toDate = calendar.nextDate(after: fromDateMinusOne, matching: calendar.dateComponents([.day], from: toDate), matchingPolicy: .nextTime)!
+            case .yearly:
+                toDate = calendar.nextDate(after: fromDateMinusOne, matching: calendar.dateComponents([.day, .month], from: toDate), matchingPolicy: .nextTime)!
+            case .never:
+                break
+            }
+        }
+        print(toDate)
+        print(fromDate)
+        if toDate == fromDate {
+                return 0;
+        } else {
+            return calendar.dateComponents([.day], from: fromDate, to: toDate).day!
+        }
     }
     
     func timelineEntry(entryDate: Date) -> EventEntry {

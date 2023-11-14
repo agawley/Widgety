@@ -16,7 +16,8 @@ struct Provider: AppIntentTimelineProvider {
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> EventEntry {
         let currentDate = Date()
-        return configuration.event.timelineEntry(entryDate: currentDate)
+        let event = Event.allEvents().randomElement()!
+        return event.timelineEntry(entryDate: currentDate)
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<EventEntry> {
@@ -40,7 +41,7 @@ struct WidgetyWidgetEntryView : View {
     var entry: Provider.Entry
     
     var body: some View {
-        SmallWidgetView(entry: entry).widgetURL(URL(string: "widgety:///panda")!)
+        SmallWidgetView(entry: entry)
     }
 }
 

@@ -9,8 +9,8 @@ import WidgetKit
 import AppIntents
 
 struct ConfigurationAppIntent: WidgetConfigurationIntent {
-    static var title: LocalizedStringResource = "Select event"
-    static var description = IntentDescription("Selects the event to count towards")
+    static var title: LocalizedStringResource = "Countdown"
+    static var description = IntentDescription("Countdown toward a future event")
 
     @Parameter(title: "Event name")
     var event: Event

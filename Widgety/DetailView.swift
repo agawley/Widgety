@@ -47,6 +47,11 @@ struct DetailView: View {
                         Text(c.rawValue.capitalized)
                     }
                 }
+                Picker("Repeats", selection: $event.repeating) {
+                    ForEach(RepeatOptions.allCases) { o in
+                        Text(o.rawValue.capitalized)
+                    }
+                }
             }
             HStack {
                 SmallWidgetView(entry: event.timelineEntry(entryDate: Date())).padding([.horizontal], 10).padding([.vertical], 10)
