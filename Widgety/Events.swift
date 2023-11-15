@@ -9,18 +9,6 @@ import Foundation
 import WidgetKit
 import AppIntents
 
-enum RepeatOptions: String, CaseIterable, Identifiable, Codable, Hashable {
-    case never, weekly, monthly, yearly
-    var id: Self { self }
-}
-
-struct EventEntry: TimelineEntry {
-    let name: String
-    let daysUntil: Int
-    let date: Date
-    let color: ThemeColor
-}
-
 struct Event: Identifiable, Hashable, Codable, AppEntity {
     let id: UUID
     var name: String
@@ -35,10 +23,15 @@ struct Event: Identifiable, Hashable, Codable, AppEntity {
         DisplayRepresentation(title: "\(name)")
     }
     
-    static func allEvents() -> [Event] {
-        let events = Events().items
-        return events
+    private static let characters: [Event] = {[
+        Event(id: UUID(), name: "something amazing",  date: .now, color: ThemeColor.blue),
+        Event(id: UUID(), name: "something aagain",  date: .now, color: ThemeColor.blue)
+    ]}()
+    
+    static func allCharacters() -> [Event] {
+        return Events.getDefault().items
     }
+    
     
     private func daysUntil(fromDate: Date) -> Int {
         let calendar = Calendar.current
@@ -57,8 +50,6 @@ struct Event: Identifiable, Hashable, Codable, AppEntity {
                 break
             }
         }
-        print(toDate)
-        print(fromDate)
         if toDate == fromDate {
                 return 0;
         } else {
@@ -73,32 +64,50 @@ struct Event: Identifiable, Hashable, Codable, AppEntity {
 
 struct EventQuery: EntityQuery {
     func entities(for identifiers: [Event.ID]) async throws -> [Event] {
-        return Event.allEvents().filter { identifiers.contains($0.id) }
+        let e = Event.allCharacters()
+        return e.filter { identifiers.contains($0.id) }
     }
     
     func suggestedEntities() async throws -> [Event] {
-        return Event.allEvents()
+        Event.allCharacters()
     }
     
     func defaultResult() async -> Event? {
-        return try? await suggestedEntities().first
+        try? await suggestedEntities().first
     }
+}
+
+enum RepeatOptions: String, CaseIterable, Identifiable, Codable, Hashable {
+    case never, weekly, monthly, yearly
+    var id: Self { self }
+}
+
+struct EventEntry: TimelineEntry {
+    let name: String
+    let daysUntil: Int
+    let date: Date
+    let color: ThemeColor
 }
 
 @Observable
 class Events {
+    private static var defaults = {
+        Events()
+    }()
+    
     private var timer = Timer()
     
+    static func getDefault() -> Events {
+        defaults
+    }
     
     var items = [Event]() {
         didSet {
             timer.invalidate()
             timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false, block: { _ in
-                let start = Date().timeIntervalSince1970
                 if let encoded = try? JSONEncoder().encode(self.items) {
                     UserDefaults(suiteName: "group.org.gawley.widgety")!.set(encoded, forKey: "Events")
                 }
-                print(Date().timeIntervalSince1970 - start)
             })
         }
         
@@ -108,9 +117,9 @@ class Events {
         if let savedItems = UserDefaults(suiteName: "group.org.gawley.widgety")!.data(forKey: "Events") {
             if let decodedItems = try? JSONDecoder().decode([Event].self, from: savedItems) {
                 items = decodedItems
-                return
             }
+        } else {
+            items = [Event(id: UUID(), name: "The best day", date: Date(), color: .blue)]
         }
-        items = []
     }
 }

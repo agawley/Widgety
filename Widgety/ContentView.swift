@@ -10,7 +10,7 @@ import WidgetKit
 
 struct ContentView: View {
     @Environment(\.scenePhase) var scenePhase
-    @State var events = Events()
+    @State var events = Events.getDefault()
         
     var body: some View {
         NavigationView{

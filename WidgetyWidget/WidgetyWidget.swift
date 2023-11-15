@@ -11,13 +11,11 @@ import SwiftUI
 struct Provider: AppIntentTimelineProvider {
     
     func placeholder(in context: Context) -> EventEntry {
-        EventEntry(name: "end of the world", daysUntil: 1203, date: .now, color: ThemeColor.blue)
+        EventEntry(name: "something amazing", daysUntil: 314, date: .now, color: ThemeColor.blue)
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> EventEntry {
-        let currentDate = Date()
-        let event = Event.allEvents().randomElement()!
-        return event.timelineEntry(entryDate: currentDate)
+        EventEntry(name: "something amazing", daysUntil:314, date: .now, color: ThemeColor.blue)
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<EventEntry> {

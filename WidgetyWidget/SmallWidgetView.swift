@@ -8,40 +8,44 @@
 import SwiftUI
 
 struct SmallWidgetView: View {
-    var entry: EventEntry
+    @State var entry: EventEntry?
     
     var body: some View {
-        if entry.daysUntil == 0 {
-            VStack {
-                Text(entry.name).font(.system(.title3, design: .rounded)).foregroundColor(Theme.textColor(theme:entry.color)).fontWeight(.bold)
-                    .multilineTextAlignment(.center).minimumScaleFactor(0.6).padding([.bottom], 10)
-                Text("is TODAY!").font(.system(.title2, design: .rounded)).foregroundColor(Theme.textColor(theme:entry.color)).fontWeight(.bold)
-                    .minimumScaleFactor(0.6)
+        if let event = entry {
+            if event.daysUntil == 0 {
+                VStack {
+                    Text(event.name).font(.system(.title3, design: .rounded)).foregroundColor(Theme.textColor(theme:event.color)).fontWeight(.bold)
+                        .multilineTextAlignment(.center).minimumScaleFactor(0.6).padding([.bottom], 10)
+                    Text("is TODAY!").font(.system(.title2, design: .rounded)).foregroundColor(Theme.textColor(theme:event.color)).fontWeight(.bold)
+                        .minimumScaleFactor(0.6)
+                }
+            } else {
+                VStack(spacing:0) {
+                    Text(abs(event.daysUntil).formatted())
+                        .font(.system(size:abs(event.daysUntil) > 999 ? 45 : 55, weight:.heavy,design: .rounded))
+                        .foregroundColor(Theme.textColor(theme:event.color))
+                        .layoutPriority(2)
+                        .lineLimit(1)
+                        .frame(height: 50, alignment: .center)
+                    
+                    HStack(alignment: .center) {
+                        Text(event.daysUntil < 0 ? (event.daysUntil == -1 ? "day since" : "days since") : event.daysUntil == 1 ? "day until" : "days until" )
+                            .foregroundColor(Theme.textColor(theme:event.color))
+                            .frame(maxHeight: .infinity, alignment: .center)
+                            .padding(.top, 5)
+                    }
+                    Text(event.name.lowercased())
+                        .font(.system(size:20, weight:.heavy, design: .rounded))
+                        .foregroundColor(Theme.textColor(theme:event.color))
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        .minimumScaleFactor(0.6)
+                        .frame(height: 50, alignment: .center)
+                        .layoutPriority(1)
+                }.padding(20)
             }
         } else {
-            VStack(spacing:0) {
-                Text(abs(entry.daysUntil).formatted())
-                    .font(.system(size:abs(entry.daysUntil) > 999 ? 45 : 55, weight:.heavy,design: .rounded))
-                    .foregroundColor(Theme.textColor(theme:entry.color))
-                    .layoutPriority(2)
-                    .lineLimit(1)
-                    .frame(height: 50, alignment: .center)
-                    
-                HStack(alignment: .center) {
-                    Text(entry.daysUntil < 0 ? (entry.daysUntil == -1 ? "day since" : "days since") : entry.daysUntil == 1 ? "day until" : "days until" )
-                        .foregroundColor(Theme.textColor(theme:entry.color))
-                        .frame(maxHeight: .infinity, alignment: .center)
-                        .padding(.top, 5)
-                }
-                Text(entry.name.lowercased())
-                    .font(.system(size:20, weight:.heavy, design: .rounded))
-                    .foregroundColor(Theme.textColor(theme:entry.color))
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-                    .minimumScaleFactor(0.6)
-                    .frame(height: 50, alignment: .center)
-                    .layoutPriority(1)
-            }.padding(20)
+            Text("empty")
         }
     }
 }
