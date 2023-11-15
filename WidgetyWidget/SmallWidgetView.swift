@@ -45,7 +45,7 @@ struct SmallWidgetView: View {
                 }.padding(20)
             }
         } else {
-            Text("empty")
+            Text("Open the app to create an event")
         }
     }
 }

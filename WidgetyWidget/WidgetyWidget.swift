@@ -47,11 +47,17 @@ struct WidgetyWidget: Widget {
     let kind: String = "WidgetyWidget"
     
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
-            WidgetyWidgetEntryView(entry: entry)
-                .containerBackground( for: .widget) {
-                    ContainerRelativeShape().fill(Theme.bgColor(theme:entry.color)) }
-        }.supportedFamilies([.systemSmall, .systemMedium])
+        AppIntentConfiguration(
+            kind: kind,
+            intent: ConfigurationAppIntent.self,
+            provider: Provider()) { entry in
+                WidgetyWidgetEntryView(entry: entry)
+                    .containerBackground( for: .widget) {
+                        ContainerRelativeShape().fill(Theme.bgColor(theme:entry.color)) }
+            }
+            .configurationDisplayName("Countdown")
+            .description("Countdown towards your important dates")
+            .supportedFamilies([.systemSmall, .systemMedium])
             .contentMarginsDisabled()
     }
 }

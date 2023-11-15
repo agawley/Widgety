@@ -23,15 +23,9 @@ struct Event: Identifiable, Hashable, Codable, AppEntity {
         DisplayRepresentation(title: "\(name)")
     }
     
-    private static let characters: [Event] = {[
-        Event(id: UUID(), name: "something amazing",  date: .now, color: ThemeColor.blue),
-        Event(id: UUID(), name: "something aagain",  date: .now, color: ThemeColor.blue)
-    ]}()
-    
-    static func allCharacters() -> [Event] {
+    static func allEvents() -> [Event] {
         return Events.getDefault().items
     }
-    
     
     private func daysUntil(fromDate: Date) -> Int {
         let calendar = Calendar.current
@@ -64,12 +58,12 @@ struct Event: Identifiable, Hashable, Codable, AppEntity {
 
 struct EventQuery: EntityQuery {
     func entities(for identifiers: [Event.ID]) async throws -> [Event] {
-        let e = Event.allCharacters()
+        let e = Event.allEvents()
         return e.filter { identifiers.contains($0.id) }
     }
     
     func suggestedEntities() async throws -> [Event] {
-        Event.allCharacters()
+        Event.allEvents()
     }
     
     func defaultResult() async -> Event? {
@@ -91,22 +85,24 @@ struct EventEntry: TimelineEntry {
 
 @Observable
 class Events {
+    
     private static var defaults = {
         Events()
     }()
     
-    private var timer = Timer()
-    
     static func getDefault() -> Events {
         defaults
     }
+    
+    private var timer = Timer()
+    private let key = "gawley.events"
     
     var items = [Event]() {
         didSet {
             timer.invalidate()
             timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false, block: { _ in
                 if let encoded = try? JSONEncoder().encode(self.items) {
-                    UserDefaults(suiteName: "group.org.gawley.widgety")!.set(encoded, forKey: "Events")
+                    UserDefaults(suiteName: "group.org.gawley.widgety")!.set(encoded, forKey: self.key)
                 }
             })
         }
@@ -114,7 +110,7 @@ class Events {
     }
     
     init() {
-        if let savedItems = UserDefaults(suiteName: "group.org.gawley.widgety")!.data(forKey: "Events") {
+        if let savedItems = UserDefaults(suiteName: "group.org.gawley.widgety")!.data(forKey: self.key) {
             if let decodedItems = try? JSONDecoder().decode([Event].self, from: savedItems) {
                 items = decodedItems
             }
