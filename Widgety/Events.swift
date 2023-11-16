@@ -24,7 +24,9 @@ struct Event: Identifiable, Hashable, Codable, AppEntity {
     }
     
     static func allEvents() -> [Event] {
-        return Events.getDefault().items
+        let events = Events.getDefault()
+        events.refresh()
+        return events.items
     }
     
     private func daysUntil(fromDate: Date) -> Int {
@@ -93,7 +95,7 @@ class Events {
     static func getDefault() -> Events {
         defaults
     }
-    
+
     private var timer = Timer()
     private let key = "gawley.events"
     
@@ -107,6 +109,14 @@ class Events {
             })
         }
         
+    }
+    
+    func refresh() {
+        if let savedItems = UserDefaults(suiteName: "group.org.gawley.widgety")!.data(forKey: self.key) {
+            if let decodedItems = try? JSONDecoder().decode([Event].self, from: savedItems) {
+                items = decodedItems
+            }
+        }
     }
     
     init() {
