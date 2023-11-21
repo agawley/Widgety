@@ -78,6 +78,7 @@ enum RepeatOptions: String, CaseIterable, Identifiable, Codable, Hashable {
 }
 
 struct EventEntry: TimelineEntry {
+    static let NO_OPTION_NAME = "xyx_NO_OPTION_SET_xyx"
     let name: String
     let daysUntil: Int
     let date: Date

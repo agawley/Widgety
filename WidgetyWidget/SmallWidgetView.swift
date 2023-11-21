@@ -12,7 +12,11 @@ struct SmallWidgetView: View {
     
     var body: some View {
         if let event = entry {
-            if event.daysUntil == 0 {
+            if (event.name == EventEntry.NO_OPTION_NAME) {
+                    Text("Long press to setup widget")
+                        .font(.system(size:20, weight:.heavy, design: .rounded))
+                        .foregroundColor(Theme.textColor(theme:event.color))
+            } else if event.daysUntil == 0 {
                 VStack {
                     Text(event.name).font(.system(.title3, design: .rounded)).foregroundColor(Theme.textColor(theme:event.color)).fontWeight(.bold)
                         .multilineTextAlignment(.center).minimumScaleFactor(0.6).padding([.bottom], 10)
@@ -34,7 +38,7 @@ struct SmallWidgetView: View {
                             .frame(maxHeight: .infinity, alignment: .center)
                             .padding(.top, 5)
                     }
-                    Text(event.name.lowercased())
+                    Text(event.name)
                         .font(.system(size:20, weight:.heavy, design: .rounded))
                         .foregroundColor(Theme.textColor(theme:event.color))
                         .fontWeight(.bold)
