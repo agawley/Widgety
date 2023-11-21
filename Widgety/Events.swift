@@ -24,8 +24,7 @@ struct Event: Identifiable, Hashable, Codable, AppEntity {
     }
     
     static func allEvents() -> [Event] {
-        let events = Events.getDefault()
-        events.refresh()
+        let events = Events()
         return events.items
     }
     

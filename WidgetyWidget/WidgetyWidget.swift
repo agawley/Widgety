@@ -11,14 +11,15 @@ import SwiftUI
 struct Provider: AppIntentTimelineProvider {
     
     func placeholder(in context: Context) -> EventEntry {
-        EventEntry(name: "something amazing", daysUntil: 314, date: .now, color: ThemeColor.blue)
+        EventEntry(name: "something amazng", daysUntil: 314, date: .now, color: ThemeColor.blue)
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> EventEntry {
-        EventEntry(name: "something amazing", daysUntil:314, date: .now, color: ThemeColor.blue)
+        EventEntry(name: "something mazing", daysUntil:314, date: .now, color: ThemeColor.blue)
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<EventEntry> {
+        print(context)
         var entries: [EventEntry] = []
         let calendar = Calendar.current
         
@@ -27,7 +28,7 @@ struct Provider: AppIntentTimelineProvider {
         for dayOffset in 0 ..< 7 {
             let entryDate = calendar.date(byAdding: .day, value: dayOffset, to: currentDate)!
             let startOfDay = calendar.startOfDay(for: entryDate)
-            let entry = configuration.event.timelineEntry(entryDate: startOfDay)
+            let entry = configuration.event?.timelineEntry(entryDate: startOfDay) ??  Events().items.first?.timelineEntry(entryDate: Date()) ?? EventEntry(name: "tap to make a new event", daysUntil:0, date: .now, color: ThemeColor.blue)
             entries.append(entry)
         }
 

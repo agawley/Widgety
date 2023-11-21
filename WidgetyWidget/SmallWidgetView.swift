@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SmallWidgetView: View {
-    @State var entry: EventEntry?
+    var entry: EventEntry?
     
     var body: some View {
         if let event = entry {

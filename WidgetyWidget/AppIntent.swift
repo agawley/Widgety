@@ -15,7 +15,7 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
     static var description = IntentDescription("Select the event to countdown towards.")
 
     @Parameter(title: "Event name")
-    var event: Event
+    var event: Event?
     
     init(event:Event) {
         self.event = event
