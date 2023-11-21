@@ -28,7 +28,7 @@ struct Provider: AppIntentTimelineProvider {
         for dayOffset in 0 ..< 7 {
             let entryDate = calendar.date(byAdding: .day, value: dayOffset, to: currentDate)!
             let startOfDay = calendar.startOfDay(for: entryDate)
-            let entry = configuration.event?.timelineEntry(entryDate: startOfDay) ??  Events().items.first?.timelineEntry(entryDate: Date()) ?? EventEntry(name: "tap to make a new event", daysUntil:0, date: .now, color: ThemeColor.blue)
+            let entry = configuration.event?.timelineEntry(entryDate: startOfDay) ??  Events().items.last?.timelineEntry(entryDate: Date()) ?? EventEntry(name: "tap to make a new event", daysUntil:0, date: .now, color: ThemeColor.blue)
             entries.append(entry)
         }
 

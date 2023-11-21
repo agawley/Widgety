@@ -68,7 +68,7 @@ struct EventQuery: EntityQuery {
     }
     
     func defaultResult() async -> Event? {
-        try? await suggestedEntities().first
+        try? await suggestedEntities().last
     }
 }
 
