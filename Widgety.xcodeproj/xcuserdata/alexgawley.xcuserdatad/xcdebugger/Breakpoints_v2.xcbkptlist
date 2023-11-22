@@ -3,4 +3,54 @@
    uuid = "6E42607F-3B2A-4211-BAF0-E7BB7F0DBE08"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B7D99117-C297-4EB1-BDA2-577B1D527828"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Widgety/Events.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "entities(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B7D99117-C297-4EB1-BDA2-577B1D527828 - 43898199bb8210a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Widgety.EventQuery.entities(for: Swift.Array&lt;Foundation.UUID&gt;) async throws -&gt; Swift.Array&lt;Widgety.Event&gt;"
+                  moduleName = "Widgety"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexgawley/Developer/iOS/Widgety/Widgety/Events.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "49">
+               </Location>
+               <Location
+                  uuid = "B7D99117-C297-4EB1-BDA2-577B1D527828 - fc000f04af436a52"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Widgety.EventQuery.entities(for: Swift.Array&lt;Foundation.UUID&gt;) async throws -&gt; Swift.Array&lt;Widgety.Event&gt;"
+                  moduleName = "Widgety"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexgawley/Developer/iOS/Widgety/Widgety/Events.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "69">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

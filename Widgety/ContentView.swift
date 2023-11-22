@@ -10,7 +10,7 @@ import WidgetKit
 
 struct ContentView: View {
     @Environment(\.scenePhase) var scenePhase
-    @State var events = Events.getDefault()
+    @State var events = Events.shared
         
     var body: some View {
         NavigationView{
@@ -19,9 +19,6 @@ struct ContentView: View {
                         ForEach($events.items) {$event in
                             NavigationLink(destination: DetailView(event: $event)) {
                                 HStack {
-                                    Circle()
-                                        .fill(Theme.bgColor(theme: event.color))
-                                        .frame(width: 10 , height: 10)
                                     Text(event.name)
                                     
                                 }
@@ -32,7 +29,7 @@ struct ContentView: View {
                     }
                     Button {
                         withAnimation {
-                            events.items.append(Event(id:UUID(), name: "My new event", date: Date(), color: ThemeColor.allCases.randomElement()!))
+                            events.items.append(Event(id:UUID(), name: "My new event"))
                         }
                     } label: {
                         Label("Add", systemImage: "plus")
