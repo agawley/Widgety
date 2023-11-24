@@ -10,40 +10,38 @@ import WidgetKit
 
 struct ContentView: View {
     @Environment(\.scenePhase) var scenePhase
-    @State var events = Events.getDefault()
-        
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @State private var columnVisibility: NavigationSplitViewVisibility = .automatic
+    @State var events = Events.getDefault().items
+
+    @State private var selectedIndex: Int?
+
     var body: some View {
-        NavigationView{
-                List{
-                    Section{
-                        ForEach($events.items) {$event in
-                            NavigationLink(destination: DetailView(event: $event)) {
-                                HStack {
-                                    Circle()
-                                        .fill(Theme.bgColor(theme: event.color))
-                                        .frame(width: 10 , height: 10)
-                                    Text(event.name)
-                                    
-                                }
-                            }
-                        }.onDelete { index in
-                            events.items.remove(atOffsets: index)
-                        }
-                    }
-                    Button {
-                        withAnimation {
-                            events.items.append(Event(id:UUID(), name: "My new event", date: Date(), color: ThemeColor.allCases.randomElement()!))
-                        }
-                    } label: {
-                        Label("Add", systemImage: "plus")
-                    }
-                }.navigationBarTitle("Countdowns")
-        }.onChange(of: scenePhase) {
+        NavigationSplitView(columnVisibility: $columnVisibility) {
+            ListView(items: $events, selectedIndex: $selectedIndex).navigationTitle("Countdowns")
+        } detail: {
+            DetailView(items: $events, selectedIndex: selectedIndex)
+        }
+        .navigationSplitViewStyle(.balanced)
+        .onChange(of: scenePhase) {
             if scenePhase == .background {
                 WidgetCenter.shared.reloadAllTimelines()
             }
         }
+        .onAppear() {
+            updateColumnVisibility()
+        }
     }
+    
+    private func updateColumnVisibility() {
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                // On iPad, use double column layout
+                columnVisibility = .doubleColumn
+            } else {
+                // In all other cases, let SwiftUI decide automatically
+                columnVisibility =  .automatic
+            }
+        }
 }
 
 
