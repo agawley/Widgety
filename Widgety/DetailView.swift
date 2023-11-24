@@ -40,7 +40,7 @@ struct DetailView: View {
     var body: some View {
         Group {
             if let selectedIndex = selectedIndex {
-                VStack {
+                VStack() {
                     Form {
                         TextField("Name", text: $items[selectedIndex].name)
                             .clearButton(text: $items[selectedIndex].name)
@@ -57,17 +57,28 @@ struct DetailView: View {
                                 Text(o.rawValue.capitalized)
                             }
                         }
+                        HStack() {
+                            Spacer()
+                            HStack {
+                                SmallWidgetView(entry: items[selectedIndex].timelineEntry(entryDate: Date())).padding([.horizontal], 10).padding([.vertical], 10)
+                            }.frame(width: 175, height: 175).background(Theme.bgColor(theme: items[selectedIndex].color)).cornerRadius(25)
+                            VStack(alignment: .leading) {
+                                Text("Widget preview").fontWeight(.bold).multilineTextAlignment(.leading)
+                                Text("To install, go to your homescreen, long press and then tap the + button.").multilineTextAlignment(.leading).font(.caption)
+                            }.frame(maxWidth: 200)
+                            
+                            Spacer()
+                        }.padding([.top,.bottom], 20)
                     }
-                    HStack {
-                        SmallWidgetView(entry: items[selectedIndex].timelineEntry(entryDate: Date())).padding([.horizontal], 10).padding([.vertical], 10)
-                    }.frame(width: 175, height: 175).background(Theme.bgColor(theme: items[selectedIndex].color)).cornerRadius(25)
+                    
+                    Spacer()
                     
                 }
             } else {
-                Text("No item selected")
+                Text("Select an event to preview / edit").font(.title)
             }
         }
-        .navigationTitle("Edit event")
-        .background(Color(UIColor.systemGroupedBackground))
+        .navigationTitle(selectedIndex != nil ? "Edit event" : "")
+        .background(selectedIndex != nil ? Color(UIColor.systemGroupedBackground) : Color(UIColor.systemBackground))
     }
 }
