@@ -12,15 +12,15 @@ struct ContentView: View {
     @Environment(\.scenePhase) var scenePhase
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @State private var columnVisibility: NavigationSplitViewVisibility = .automatic
-    @State var events = Events.getDefault().items
+    @State var events = Events.getDefault()
 
     @State private var selectedIndex: Int?
 
     var body: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
-            ListView(items: $events, selectedIndex: $selectedIndex).navigationTitle("Countdowns")
+            ListView(items: $events.items, selectedIndex: $selectedIndex).navigationTitle("Countdowns")
         } detail: {
-            DetailView(items: $events, selectedIndex: selectedIndex)
+            DetailView(items: $events.items, selectedIndex: selectedIndex)
         }
         .navigationSplitViewStyle(.balanced)
         .onChange(of: scenePhase) {

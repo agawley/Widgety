@@ -38,9 +38,17 @@ struct Provider: AppIntentTimelineProvider {
 
 struct WidgetyWidgetEntryView : View {
     var entry: Provider.Entry
+    @Environment(\.widgetFamily) var family
     
     var body: some View {
-        SmallWidgetView(entry: entry)
+        switch family {
+        case .systemSmall:
+            SmallWidgetView(entry: entry)
+        case .systemMedium:
+            MediumWidgetView(entry: entry)
+        default:
+            Text("Unsupported")
+        }
     }
 }
 
@@ -63,9 +71,9 @@ struct WidgetyWidget: Widget {
     }
 }
 
-#Preview(as: .systemSmall) {
+#Preview(as: .systemMedium) {
     WidgetyWidget()
 } timeline: {
     EventEntry(name: "end of the world again", daysUntil: 1200, date: .now, color: ThemeColor.red)
-    EventEntry(name: "end of the world", daysUntil: 0, date: .now, color: ThemeColor.purple)
+    EventEntry(name: "end of the world",daysUntil: 0, date: .now, color: ThemeColor.purple)
 }

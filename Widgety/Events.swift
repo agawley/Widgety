@@ -77,6 +77,12 @@ enum RepeatOptions: String, CaseIterable, Identifiable, Codable, Hashable {
     var id: Self { self }
 }
 
+struct WeeksDaysHours {
+    let weeks: Int
+    let days: Int
+    let hours: Int
+}
+
 struct EventEntry: TimelineEntry {
     static let NO_OPTION_NAME = "xyx_NO_OPTION_SET_xyx"
     let name: String
