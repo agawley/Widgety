@@ -21,8 +21,7 @@ struct Event: Identifiable, Hashable, Codable, AppEntity {
     }
     
     static func allEvents() -> [Event] {
-        let events = Events()
-        return events.items
+        return Events().items
     }
     
     func timelineEntry(entryDate: Date) -> EventEntry {
@@ -53,34 +52,23 @@ struct EventEntry: TimelineEntry {
     let date: Date
 }
 
+struct Data {
+    static let events = [Event(id: UUID(), name: "An event"), Event(id: UUID(), name: "Another event"), Event(id: UUID(), name: "A third event")]
+}
+
 @Observable
 class Events {
     
     static var shared = Events()
+    
 
     private var timer = Timer()
     private let key = "gawley.events"
     private let sharedStorageID = "group.org.gawley.widgety"
     
-    var items = [Event]() {
-        didSet {
-            timer.invalidate()
-            timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false, block: { _ in
-                if let encoded = try? JSONEncoder().encode(self.items) {
-                    UserDefaults(suiteName: self.sharedStorageID)!.set(encoded, forKey: self.key)
-                }
-            })
-        }
-        
-    }
+    var items: [Event]
     
     init() {
-        if let savedItems = UserDefaults(suiteName: self.sharedStorageID)!.data(forKey: self.key) {
-            if let decodedItems = try? JSONDecoder().decode([Event].self, from: savedItems) {
-                items = decodedItems
-            }
-        } else {
-            items = [Event(id: UUID(), name: "Default entry")]
-        }
+        items = Data.events
     }
 }
