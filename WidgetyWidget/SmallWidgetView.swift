@@ -17,6 +17,7 @@ struct SmallWidgetView: View {
                         .font(.system(size:20, weight:.heavy, design: .rounded))
                         .foregroundColor(Theme.textColor(theme:event.color))
                         .multilineTextAlignment(.center)
+                        .padding([.horizontal], 10)
             } else if event
                 .daysUntil == 0 {
                 VStack {
