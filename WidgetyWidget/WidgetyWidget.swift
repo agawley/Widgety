@@ -13,11 +13,11 @@ struct Provider: AppIntentTimelineProvider {
     private static let fallbackEntry = EventEntry(name: "something amazing", daysUntil:314, date: .now, color: ThemeColor.blue)
     
     func placeholder(in context: Context) -> EventEntry {
-        Events.getDefault().items.first?.timelineEntry(entryDate: .now) ?? Provider.fallbackEntry
+        Events().items.first?.timelineEntry(entryDate: .now) ?? Provider.fallbackEntry
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> EventEntry {
-        Events.getDefault().items.first?.timelineEntry(entryDate: .now) ?? Provider.fallbackEntry
+        Events().items.first?.timelineEntry(entryDate: .now) ?? Provider.fallbackEntry
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<EventEntry> {

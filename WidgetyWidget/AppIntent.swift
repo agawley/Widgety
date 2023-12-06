@@ -14,7 +14,7 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
     static var title: LocalizedStringResource = "Select Event"
     static var description = IntentDescription("Select the event to countdown towards.")
 
-    @Parameter(title: "Event name", optionsProvider: EventOptionsProvider())
+    @Parameter(title: "Event name"/*, optionsProvider: EventOptionsProvider()*/)
     var event: Event?
     
     init(event:Event) {
@@ -24,7 +24,7 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
     init() {
     }
     
-    struct EventOptionsProvider: DynamicOptionsProvider {
+    /*struct EventOptionsProvider: DynamicOptionsProvider {
         func results() async throws -> [Event] {
             Events().items.compactMap { event in
                 return event
@@ -33,6 +33,6 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
         func defaultResult() async -> Event? {
             Events().items.first
         }
-    }
+    }*/
 }
 
