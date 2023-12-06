@@ -10,12 +10,14 @@ import SwiftUI
 
 struct Provider: AppIntentTimelineProvider {
     
+    private static let fallbackEntry = EventEntry(name: "something amazing", daysUntil:314, date: .now, color: ThemeColor.blue)
+    
     func placeholder(in context: Context) -> EventEntry {
-        EventEntry(name: "something amazng", daysUntil: 314, date: .now, color: ThemeColor.blue)
+        Events.getDefault().items.first?.timelineEntry(entryDate: .now) ?? Provider.fallbackEntry
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> EventEntry {
-        EventEntry(name: "something mazing", daysUntil:314, date: .now, color: ThemeColor.blue)
+        Events.getDefault().items.first?.timelineEntry(entryDate: .now) ?? Provider.fallbackEntry
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<EventEntry> {

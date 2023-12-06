@@ -23,6 +23,8 @@ struct ListView: View {
                     }.onTapGesture {
                         selectedIndex = index
                     }
+                }.onDelete { index in
+                    items.remove(atOffsets: index)
                 }
             }
             Button {

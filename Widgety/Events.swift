@@ -117,21 +117,11 @@ class Events {
         
     }
     
-    func refresh() {
-        if let savedItems = UserDefaults(suiteName: "group.org.gawley.widgety")!.data(forKey: self.key) {
-            if let decodedItems = try? JSONDecoder().decode([Event].self, from: savedItems) {
-                items = decodedItems
-            }
-        }
-    }
-    
     init() {
         if let savedItems = UserDefaults(suiteName: "group.org.gawley.widgety")!.data(forKey: self.key) {
             if let decodedItems = try? JSONDecoder().decode([Event].self, from: savedItems) {
                 items = decodedItems
             }
-        } else {
-            items = [Event(id: UUID(), name: "The best day", date: Date(), color: .blue)]
         }
     }
 }

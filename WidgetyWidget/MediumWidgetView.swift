@@ -30,9 +30,10 @@ struct MediumWidgetView: View {
     var body: some View {
         if let event = entry {
             if (event.name == EventEntry.NO_OPTION_NAME) {
-                    Text("Long press to setup widget")
-                        .font(.system(size:20, weight:.heavy, design: .rounded))
-                        .foregroundColor(Theme.textColor(theme:event.color))
+                    Text("Tap to add an event or tap and hold to configuire")
+                    .font(.system(size:20, weight:.heavy, design: .rounded))
+                    .foregroundColor(Theme.textColor(theme:event.color))
+                    .multilineTextAlignment(.center)
             } else if event.daysUntil == 0 {
                 VStack {
                     Text(event.name).font(.system(.title3, design: .rounded)).foregroundColor(Theme.textColor(theme:event.color)).fontWeight(.bold)
