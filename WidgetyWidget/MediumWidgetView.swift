@@ -13,14 +13,14 @@ struct MediumWidgetView: View {
         var timingString: String = ""
         let days = event.daysUntil
         let longFormTimeUntil = WeeksDaysHours(weeks: days / 7, days: days % 7, hours: 0)
-        if (longFormTimeUntil.weeks > 0) {
-            timingString += longFormTimeUntil.weeks.formatted()
-            timingString += longFormTimeUntil.weeks == 1 ? " week" : " weeks"
-            timingString += longFormTimeUntil.days > 0 ? " " : ""
+        if (abs(longFormTimeUntil.weeks) > 0) {
+            timingString += abs(longFormTimeUntil.weeks).formatted()
+            timingString += abs(longFormTimeUntil.weeks) == 1 ? " week" : " weeks"
+            timingString += abs(longFormTimeUntil.days) > 0 ? " " : ""
         }
-        if (longFormTimeUntil.days > 0) {
-            timingString += longFormTimeUntil.days.formatted()
-            timingString += longFormTimeUntil.days == 1 ? " day" : " days"
+        if (abs(longFormTimeUntil.days) > 0) {
+            timingString += abs(longFormTimeUntil.days).formatted()
+            timingString += abs(longFormTimeUntil.days) == 1 ? " day" : " days"
         }
         return timingString
     }
