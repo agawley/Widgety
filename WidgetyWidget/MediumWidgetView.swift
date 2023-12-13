@@ -28,53 +28,70 @@ struct MediumWidgetView: View {
     var entry: EventEntry?
     
     var body: some View {
-        if let event = entry {
-            if (event.name == EventEntry.NO_OPTION_NAME) {
-                    Text("Tap to add an event or tap and hold to configuire")
-                    .font(.system(size:20, weight:.heavy, design: .rounded))
-                    .foregroundColor(Theme.textColor(theme:event.color))
-                    .multilineTextAlignment(.center)
-            } else if event.daysUntil == 0 {
-                VStack {
-                    Text(event.name).font(.system(.title3, design: .rounded)).foregroundColor(Theme.textColor(theme:event.color)).fontWeight(.bold)
-                        .multilineTextAlignment(.center).minimumScaleFactor(0.6).padding([.bottom], 10)
-                    Text("is TODAY!").font(.system(.title2, design: .rounded)).foregroundColor(Theme.textColor(theme:event.color)).fontWeight(.bold)
-                        .minimumScaleFactor(0.6)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dM"
+        
+        return ZStack {
+            if let event = entry {
+                ZStack {
+                    
+                    if (event.name == EventEntry.NO_OPTION_NAME) {
+                        Text("Tap to add an event or tap and hold to configuire")
+                            .font(.system(size:20, weight:.heavy, design: .rounded))
+                            .foregroundColor(Theme.textColor(theme:event.color))
+                            .multilineTextAlignment(.center)
+                    } else if event.daysUntil == 0 {
+                        VStack {
+                            Text(event.name).font(.system(.title3, design: .rounded)).foregroundColor(Theme.textColor(theme:event.color)).fontWeight(.bold)
+                                .multilineTextAlignment(.center).minimumScaleFactor(0.6).padding([.bottom], 10)
+                            Text("is TODAY!").font(.system(.title2, design: .rounded)).foregroundColor(Theme.textColor(theme:event.color)).fontWeight(.bold)
+                                .minimumScaleFactor(0.6)
+                        }
+                    } else {
+                        VStack(spacing:0) {
+                            Text(timingString(from: event))
+                                .font(.system(size:40, weight:.heavy,design: .rounded))
+                                .foregroundColor(Theme.textColor(theme:event.color))
+                                .layoutPriority(2)
+                                .lineLimit(1)
+                                .frame(height: 50, alignment: .center)
+                            HStack(alignment: .center) {
+                                Text(event.daysUntil < 0 ? "since" : "until" )
+                                    .font(.title2)
+                                    .foregroundColor(Theme.textColor(theme:event.color))
+                                    .frame(maxHeight: .infinity, alignment: .center)
+                                    .padding(.top, 5)
+                            }
+                            Text(event.name)
+                                .font(.system(size:30, weight:.heavy, design: .rounded))
+                                .foregroundColor(Theme.textColor(theme:event.color))
+                                .fontWeight(.bold)
+                                .multilineTextAlignment(.center)
+                                .minimumScaleFactor(0.6)
+                                .frame(height: 50, alignment: .center)
+                                .layoutPriority(1)
+                        }.padding(20)
+                    }
+                    if (formatter.string(from: Date.now.addingTimeInterval(TimeInterval(event.daysUntil * 24 * 60 * 60)))  == "2512") {
+                        Image("tree")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .mask(Image("tree"))
+                            .colorInvert()
+                            .opacity(0.3)
+                            .padding(13)
+                    }
                 }
             } else {
-                VStack(spacing:0) {
-                    Text(timingString(from: event))
-                        .font(.system(size:40, weight:.heavy,design: .rounded))
-                        .foregroundColor(Theme.textColor(theme:event.color))
-                        .layoutPriority(2)
-                        .lineLimit(1)
-                        .frame(height: 50, alignment: .center)
-                    HStack(alignment: .center) {
-                        Text(event.daysUntil < 0 ? "since" : "until" )
-                            .font(.title2)
-                            .foregroundColor(Theme.textColor(theme:event.color))
-                            .frame(maxHeight: .infinity, alignment: .center)
-                            .padding(.top, 5)
-                    }
-                    Text(event.name)
-                        .font(.system(size:30, weight:.heavy, design: .rounded))
-                        .foregroundColor(Theme.textColor(theme:event.color))
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .minimumScaleFactor(0.6)
-                        .frame(height: 50, alignment: .center)
-                        .layoutPriority(1)
-                }.padding(20)
+                Text("Open the app to create an event")
             }
-        } else {
-            Text("Open the app to create an event")
         }
     }
 }
 
 #Preview {
     HStack{
-        MediumWidgetView(entry: EventEntry(name: "end of term - yay!", daysUntil: 500, date: .now, color: ThemeColor.red))
+        MediumWidgetView(entry: EventEntry(name: "end of term - yay!", daysUntil: 10, date: .now, color: ThemeColor.red))
     }.frame(width: 350, height: 175).background(.red).cornerRadius(25)
 }
 
