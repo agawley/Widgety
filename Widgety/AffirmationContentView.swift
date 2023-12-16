@@ -1,24 +1,26 @@
 //
-//  ContentView.swift
+//  AffirmationContentView.swift
 //  Widgety
 //
-//  Created by Alex Gawley on 05/11/2023.
+//  Created by Alex Gawley on 16/12/2023.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+import SwiftUI
+
+struct AffirmationContentView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @State private var columnVisibility: NavigationSplitViewVisibility = .automatic
-    @State var events = Events.getDefault()
+    @State var affirmations = Affirmations.defaults
 
     @State private var selectedIndex: Int?
 
     var body: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
-            ListView(items: $events.items, selectedIndex: $selectedIndex).navigationTitle("Countdowns")
+            AffirmationListView(items: $affirmations.items, selectedIndex: $selectedIndex).navigationTitle("Affirmations")
         } detail: {
-            DetailView(items: $events.items, selectedIndex: selectedIndex)
+            AffirmationDetailView(items: $affirmations.items, selectedIndex: selectedIndex)
         }
         .navigationSplitViewStyle(.balanced)
         .onAppear() {
@@ -39,5 +41,5 @@ struct ContentView: View {
 
 
 #Preview {
-    ContentView()
+    AffirmationContentView()
 }
