@@ -15,13 +15,13 @@
 		401C0FFC2B10E22300EE6CF0 /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FFB2B10E22300EE6CF0 /* MediumWidgetView.swift */; };
 		401C0FFD2B10E22400EE6CF0 /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FFB2B10E22300EE6CF0 /* MediumWidgetView.swift */; };
 		40393B6D2B2DBE5900F91AD7 /* Affirmations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */; };
-		40393B6E2B2DBE5900F91AD7 /* Affirmations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */; };
 		40393B702B2DC26B00F91AD7 /* AffirmationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6F2B2DC26B00F91AD7 /* AffirmationWidget.swift */; };
 		40393B732B2DC49D00F91AD7 /* AffirmationWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */; };
 		40393B772B2DCDEF00F91AD7 /* AffirmationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B762B2DCDEF00F91AD7 /* AffirmationListView.swift */; };
 		40393B792B2DD01F00F91AD7 /* AffirmationContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B782B2DD01F00F91AD7 /* AffirmationContentView.swift */; };
 		40393B7B2B2DD0B800F91AD7 /* AffirmationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B7A2B2DD0B800F91AD7 /* AffirmationDetailView.swift */; };
 		40393B7C2B2DD12B00F91AD7 /* AffirmationWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */; };
+		40393B7D2B2DF62200F91AD7 /* Affirmations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */; };
 		40C4E7F02AF817D00067CA63 /* WidgetyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E7EF2AF817D00067CA63 /* WidgetyApp.swift */; };
 		40C4E7F22AF817D00067CA63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E7F12AF817D00067CA63 /* ContentView.swift */; };
 		40C4E7F42AF817D30067CA63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C4E7F32AF817D30067CA63 /* Assets.xcassets */; };
@@ -126,6 +126,7 @@
 			children = (
 				40393B762B2DCDEF00F91AD7 /* AffirmationListView.swift */,
 				40393B782B2DD01F00F91AD7 /* AffirmationContentView.swift */,
+				40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */,
 				40393B7A2B2DD0B800F91AD7 /* AffirmationDetailView.swift */,
 			);
 			name = Affirmation;
@@ -160,7 +161,6 @@
 				401C0FF92B0FBE7300EE6CF0 /* ListView.swift */,
 				40C4E8192AF8F5660067CA63 /* DetailView.swift */,
 				40C4E81B2AF90A980067CA63 /* Events.swift */,
-				40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */,
 				401B68B02AFA7C7500281D6B /* Theme.swift */,
 				40C4E7F32AF817D30067CA63 /* Assets.xcassets */,
 				40C4E7F52AF817D30067CA63 /* Widgety.entitlements */,
@@ -322,7 +322,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40393B6E2B2DBE5900F91AD7 /* Affirmations.swift in Sources */,
 				40C4E81D2AF90A980067CA63 /* Events.swift in Sources */,
 				40393B702B2DC26B00F91AD7 /* AffirmationWidget.swift in Sources */,
 				40C4E80A2AF818540067CA63 /* WidgetyWidgetBundle.swift in Sources */,
@@ -331,6 +330,7 @@
 				40C4E80C2AF818540067CA63 /* WidgetyWidget.swift in Sources */,
 				40393B732B2DC49D00F91AD7 /* AffirmationWidgetView.swift in Sources */,
 				401B68B52AFBD7BE00281D6B /* SmallWidgetView.swift in Sources */,
+				40393B7D2B2DF62200F91AD7 /* Affirmations.swift in Sources */,
 				40C4E80E2AF818540067CA63 /* AppIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,7 +470,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Widgety/Widgety.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.2;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Widgety/Preview Content\"";
 				DEVELOPMENT_TEAM = J59UG6Y638;
@@ -491,7 +491,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.6;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.gawley.Widgety;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -511,7 +511,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Widgety/Widgety.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.2;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Widgety/Preview Content\"";
 				DEVELOPMENT_TEAM = J59UG6Y638;
@@ -532,7 +532,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.6;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.gawley.Widgety;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -551,7 +551,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = WidgetyWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.2;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = J59UG6Y638;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WidgetyWidget/Info.plist;
@@ -563,7 +563,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.gawley.Widgety.WidgetyWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -581,7 +581,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = WidgetyWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.2;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = J59UG6Y638;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WidgetyWidget/Info.plist;
@@ -593,7 +593,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.gawley.Widgety.WidgetyWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

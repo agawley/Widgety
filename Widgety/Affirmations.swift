@@ -33,7 +33,14 @@ struct AffirmationEntry: TimelineEntry {
 class Affirmations {
     
     static var defaults = Affirmations()
-    static let defaultAffirmations = [Affirmation(id: UUID(), phrase: "You are a queen", color: .blue), Affirmation(id: UUID(), phrase: "You look fabulous", color: .red)]
+    static let defaultAffirmations = [
+        Affirmation(id: UUID(), phrase: "You are a queen 👑", color: .blue),
+        Affirmation(id: UUID(), phrase: "Go out there and smash it 🚀", color: .red),
+        Affirmation(id: UUID(), phrase: "I believe in you 👊", color: .orange),
+        Affirmation(id: UUID(), phrase: "You got this 💪", color: .green),
+        Affirmation(id: UUID(), phrase: "Whatever happens you are a star 🌟", color: .purple),
+        Affirmation(id: UUID(), phrase: "You look fabulous 💇‍♂️", color: .black)
+    ]
 
     private var timer = Timer()
     private let key = "gawley.affirmations"
