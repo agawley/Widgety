@@ -12,5 +12,6 @@ import SwiftUI
 struct WidgetyWidgetBundle: WidgetBundle {
     var body: some Widget {
         WidgetyWidget()
+        AffirmationWidget()
     }
 }

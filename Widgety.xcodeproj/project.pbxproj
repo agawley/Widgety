@@ -14,6 +14,10 @@
 		401C0FFA2B0FBE7300EE6CF0 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FF92B0FBE7300EE6CF0 /* ListView.swift */; };
 		401C0FFC2B10E22300EE6CF0 /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FFB2B10E22300EE6CF0 /* MediumWidgetView.swift */; };
 		401C0FFD2B10E22400EE6CF0 /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FFB2B10E22300EE6CF0 /* MediumWidgetView.swift */; };
+		40393B6D2B2DBE5900F91AD7 /* Affirmations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */; };
+		40393B6E2B2DBE5900F91AD7 /* Affirmations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */; };
+		40393B702B2DC26B00F91AD7 /* AffirmationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6F2B2DC26B00F91AD7 /* AffirmationWidget.swift */; };
+		40393B732B2DC49D00F91AD7 /* AffirmationWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */; };
 		40C4E7F02AF817D00067CA63 /* WidgetyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E7EF2AF817D00067CA63 /* WidgetyApp.swift */; };
 		40C4E7F22AF817D00067CA63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E7F12AF817D00067CA63 /* ContentView.swift */; };
 		40C4E7F42AF817D30067CA63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C4E7F32AF817D30067CA63 /* Assets.xcassets */; };
@@ -59,6 +63,9 @@
 		401B68B32AFBD7BE00281D6B /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
 		401C0FF92B0FBE7300EE6CF0 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		401C0FFB2B10E22300EE6CF0 /* MediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetView.swift; sourceTree = "<group>"; };
+		40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmations.swift; sourceTree = "<group>"; };
+		40393B6F2B2DC26B00F91AD7 /* AffirmationWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationWidget.swift; sourceTree = "<group>"; };
+		40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationWidgetView.swift; sourceTree = "<group>"; };
 		40C4E7EC2AF817D00067CA63 /* Widgety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Widgety.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C4E7EF2AF817D00067CA63 /* WidgetyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetyApp.swift; sourceTree = "<group>"; };
 		40C4E7F12AF817D00067CA63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40393B742B2DC68500F91AD7 /* Affirmation */ = {
+			isa = PBXGroup;
+			children = (
+				40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */,
+				40393B6F2B2DC26B00F91AD7 /* AffirmationWidget.swift */,
+			);
+			name = Affirmation;
+			sourceTree = "<group>";
+		};
 		40C4E7E32AF817D00067CA63 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +142,7 @@
 				401C0FF92B0FBE7300EE6CF0 /* ListView.swift */,
 				40C4E8192AF8F5660067CA63 /* DetailView.swift */,
 				40C4E81B2AF90A980067CA63 /* Events.swift */,
+				40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */,
 				401B68B02AFA7C7500281D6B /* Theme.swift */,
 				40C4E7F32AF817D30067CA63 /* Assets.xcassets */,
 				40C4E7F52AF817D30067CA63 /* Widgety.entitlements */,
@@ -157,6 +174,7 @@
 				40C4E8092AF818540067CA63 /* WidgetyWidgetBundle.swift */,
 				40C4E80B2AF818540067CA63 /* WidgetyWidget.swift */,
 				401B68B32AFBD7BE00281D6B /* SmallWidgetView.swift */,
+				40393B742B2DC68500F91AD7 /* Affirmation */,
 				401C0FFB2B10E22300EE6CF0 /* MediumWidgetView.swift */,
 				40C4E80D2AF818540067CA63 /* AppIntent.swift */,
 				40C4E80F2AF818590067CA63 /* Assets.xcassets */,
@@ -269,6 +287,7 @@
 				40C4E81C2AF90A980067CA63 /* Events.swift in Sources */,
 				401C0FFC2B10E22300EE6CF0 /* MediumWidgetView.swift in Sources */,
 				40C4E7F22AF817D00067CA63 /* ContentView.swift in Sources */,
+				40393B6D2B2DBE5900F91AD7 /* Affirmations.swift in Sources */,
 				401B68B12AFA7C7500281D6B /* Theme.swift in Sources */,
 				401C0FFA2B0FBE7300EE6CF0 /* ListView.swift in Sources */,
 				40C4E81A2AF8F5670067CA63 /* DetailView.swift in Sources */,
@@ -281,11 +300,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40393B6E2B2DBE5900F91AD7 /* Affirmations.swift in Sources */,
 				40C4E81D2AF90A980067CA63 /* Events.swift in Sources */,
+				40393B702B2DC26B00F91AD7 /* AffirmationWidget.swift in Sources */,
 				40C4E80A2AF818540067CA63 /* WidgetyWidgetBundle.swift in Sources */,
 				401C0FFD2B10E22400EE6CF0 /* MediumWidgetView.swift in Sources */,
 				401B68B22AFA7C7500281D6B /* Theme.swift in Sources */,
 				40C4E80C2AF818540067CA63 /* WidgetyWidget.swift in Sources */,
+				40393B732B2DC49D00F91AD7 /* AffirmationWidgetView.swift in Sources */,
 				401B68B52AFBD7BE00281D6B /* SmallWidgetView.swift in Sources */,
 				40C4E80E2AF818540067CA63 /* AppIntent.swift in Sources */,
 			);
