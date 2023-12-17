@@ -30,7 +30,8 @@ struct AffirmationProvider: TimelineProvider {
         for dayOffset in 0 ..< affirmations.count {
             let entryDate = calendar.date(byAdding: .day, value: dayOffset, to: currentDate)!
             let startOfDay = calendar.startOfDay(for: entryDate)
-            let entry = affirmations[dayOffset].timelineEntry(entryDate: startOfDay)
+            let day = calendar.dateComponents([.day], from: entryDate).day ?? 0
+            let entry = affirmations[day % affirmations.count].timelineEntry(entryDate: startOfDay)
             entries.append(entry)
         }
 
