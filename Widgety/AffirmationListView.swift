@@ -27,6 +27,8 @@ struct AffirmationListView: View {
                     }
                 }.onDelete { index in
                     items.remove(atOffsets: index)
+                }.onMove { from, to in
+                    items.move(fromOffsets: from, toOffset: to)
                 }
             }
             Button {
@@ -37,6 +39,6 @@ struct AffirmationListView: View {
             } label: {
                 Label("Add", systemImage: "plus")
             }
-        }
+        }.id(UUID())
     }
 }
