@@ -13,6 +13,12 @@ struct AffirmationWidgetView: View {
     var body: some View {
         
         return ZStack {
+            Image("sparkle")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .colorInvert()
+                .opacity(0.3)
+                .padding(8)
             if let event = entry {
                 if (event.phrase == EventEntry.NO_OPTION_NAME) {
                     Text("Tap to edit your affirmations")

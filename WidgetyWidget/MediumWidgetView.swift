@@ -34,7 +34,14 @@ struct MediumWidgetView: View {
         return ZStack {
             if let event = entry {
                 ZStack {
-                    
+                    if (formatter.string(from: Date.now.addingTimeInterval(TimeInterval(event.daysUntil * 24 * 60 * 60)))  == "2512") {
+                        Image("tree")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .colorInvert()
+                            .opacity(0.3)
+                            .padding(13)
+                    }
                     if (event.name == EventEntry.NO_OPTION_NAME) {
                         Text("Tap to add an event or tap and hold to configuire")
                             .font(.system(size:20, weight:.heavy, design: .rounded))
@@ -71,15 +78,6 @@ struct MediumWidgetView: View {
                                 .frame(height: 50, alignment: .center)
                                 .layoutPriority(1)
                         }.padding(20)
-                    }
-                    if (formatter.string(from: Date.now.addingTimeInterval(TimeInterval(event.daysUntil * 24 * 60 * 60)))  == "2512") {
-                        Image("tree")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .mask(Image("tree"))
-                            .colorInvert()
-                            .opacity(0.3)
-                            .padding(13)
                     }
                 }
             } else {

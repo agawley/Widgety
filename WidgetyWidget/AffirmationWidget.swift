@@ -46,9 +46,9 @@ struct AffirmationWidgetEntryView : View {
     var body: some View {
         switch family {
         case .systemSmall:
-            AffirmationWidgetView(entry: entry)
+            AffirmationWidgetView(entry: entry).widgetURL(URL(string: "widgety://affirmations"))
         case .systemMedium:
-            AffirmationWidgetView(entry: entry)
+            AffirmationWidgetView(entry: entry).widgetURL(URL(string: "widgety://affirmations"))
         default:
             Text("Unsupported")
         }

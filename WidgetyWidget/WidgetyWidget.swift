@@ -45,9 +45,9 @@ struct WidgetyWidgetEntryView : View {
     var body: some View {
         switch family {
         case .systemSmall:
-            SmallWidgetView(entry: entry)
+            SmallWidgetView(entry: entry).widgetURL(URL(string: "widgety://countdowns"))
         case .systemMedium:
-            MediumWidgetView(entry: entry)
+            MediumWidgetView(entry: entry).widgetURL(URL(string: "widgety://countdowns"))
         default:
             Text("Unsupported")
         }

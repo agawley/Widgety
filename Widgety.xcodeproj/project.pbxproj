@@ -73,6 +73,7 @@
 		40393B762B2DCDEF00F91AD7 /* AffirmationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationListView.swift; sourceTree = "<group>"; };
 		40393B782B2DD01F00F91AD7 /* AffirmationContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationContentView.swift; sourceTree = "<group>"; };
 		40393B7A2B2DD0B800F91AD7 /* AffirmationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationDetailView.swift; sourceTree = "<group>"; };
+		40393B7F2B2F4ED300F91AD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		40C4E7EC2AF817D00067CA63 /* Widgety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Widgety.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C4E7EF2AF817D00067CA63 /* WidgetyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetyApp.swift; sourceTree = "<group>"; };
 		40C4E7F12AF817D00067CA63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 		40C4E7EE2AF817D00067CA63 /* Widgety */ = {
 			isa = PBXGroup;
 			children = (
+				40393B7F2B2F4ED300F91AD7 /* Info.plist */,
 				40C4E7EF2AF817D00067CA63 /* WidgetyApp.swift */,
 				40C4E7F12AF817D00067CA63 /* ContentView.swift */,
 				40393B752B2DCDC500F91AD7 /* Affirmation */,
@@ -477,6 +479,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Widgety/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -518,6 +521,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Widgety/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
