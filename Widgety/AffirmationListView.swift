@@ -15,6 +15,7 @@ struct AffirmationListView: View {
     
     var body: some View {
         List(selection: $selectedIndex) {
+            DescriptiveSectionView(text: "The Affirmation Widget will show a different phrase each day.")
             Section{
                 ForEach(items.indices, id: \.self) { index in
                     HStack {
