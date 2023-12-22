@@ -30,7 +30,8 @@ struct Provider: AppIntentTimelineProvider {
         for dayOffset in 0 ..< 7 {
             let entryDate = calendar.date(byAdding: .day, value: dayOffset, to: currentDate)!
             let startOfDay = calendar.startOfDay(for: entryDate)
-            let entry = configuration.event?.timelineEntry(entryDate: startOfDay) ??  EventEntry(name: EventEntry.NO_OPTION_NAME, daysUntil:0, date: .now, color: ThemeColor.grey)
+            let tenMinOffsetFromMidnight = calendar.date(byAdding: .minute, value: 10, to: startOfDay)!
+            let entry = configuration.event?.timelineEntry(entryDate: tenMinOffsetFromMidnight) ??  EventEntry(name: EventEntry.NO_OPTION_NAME, daysUntil:0, date: .now, color: ThemeColor.grey)
             entries.append(entry)
         }
 
