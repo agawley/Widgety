@@ -11,13 +11,10 @@ struct CountdownSmallWidgetView: View {
     var entry: EventEntry?
     
     var body: some View {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dM"
-        
-        return ZStack {
+        ZStack {
             if let event = entry {
                 ZStack {
-                    if (formatter.string(from: Date.now.addingTimeInterval(TimeInterval(event.daysUntil * 24 * 60 * 60)))  == "2512") {
+                    if (event.tag == .xmas) {
                         Image("tree")
                             .resizable()
                             .aspectRatio(contentMode: .fill)

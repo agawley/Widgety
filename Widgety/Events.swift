@@ -53,7 +53,10 @@ struct Event: Identifiable, Hashable, Codable, AppEntity {
     }
     
     func timelineEntry(entryDate: Date) -> EventEntry {
-        return EventEntry(name: name, daysUntil: daysUntil(fromDate: entryDate), date: entryDate,  color: color)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dM"
+        let tag = (formatter.string(from: date)) == "2512" ? Tags.xmas : nil;
+        return EventEntry(name: name, daysUntil: daysUntil(fromDate: entryDate), date: entryDate,  color: color, tag: tag)
     }
 }
 
@@ -83,12 +86,18 @@ struct WeeksDaysHours {
     let hours: Int
 }
 
+enum Tags: String, CaseIterable, Identifiable, Codable, Hashable {
+    case xmas
+    var id: Self { self }
+}
+
 struct EventEntry: TimelineEntry {
     static let NO_OPTION_NAME = "xyx_NO_OPTION_SET_xyx"
     let name: String
     let daysUntil: Int
     let date: Date
     let color: ThemeColor
+    var tag: Tags?
 }
 
 @Observable

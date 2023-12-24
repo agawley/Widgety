@@ -210,9 +210,9 @@
 		40EF22AE2B389D55003EF11C /* Countdowns */ = {
 			isa = PBXGroup;
 			children = (
-				401B68B32AFBD7BE00281D6B /* CountdownSmallWidgetView.swift */,
 				40C4E80B2AF818540067CA63 /* CountdownWidget.swift */,
 				40C4E80D2AF818540067CA63 /* CountdownConfigAppIntent.swift */,
+				401B68B32AFBD7BE00281D6B /* CountdownSmallWidgetView.swift */,
 				401C0FFB2B10E22300EE6CF0 /* CountdownMediumWidgetView.swift */,
 			);
 			name = Countdowns;
