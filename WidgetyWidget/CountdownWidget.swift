@@ -8,19 +8,19 @@
 import WidgetKit
 import SwiftUI
 
-struct Provider: AppIntentTimelineProvider {
+struct CountdownProvider: AppIntentTimelineProvider {
     
     private static let fallbackEntry = EventEntry(name: "something amazing", daysUntil:314, date: .now, color: ThemeColor.blue)
     
     func placeholder(in context: Context) -> EventEntry {
-        Events().items.first?.timelineEntry(entryDate: .now) ?? Provider.fallbackEntry
+        Events().items.first?.timelineEntry(entryDate: .now) ?? CountdownProvider.fallbackEntry
     }
 
-    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> EventEntry {
-        Events().items.first?.timelineEntry(entryDate: .now) ?? Provider.fallbackEntry
+    func snapshot(for configuration: CountdownWidgetConfigurationAppIntent, in context: Context) async -> EventEntry {
+        Events().items.first?.timelineEntry(entryDate: .now) ?? CountdownProvider.fallbackEntry
     }
     
-    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<EventEntry> {
+    func timeline(for configuration: CountdownWidgetConfigurationAppIntent, in context: Context) async -> Timeline<EventEntry> {
         print(context)
         var entries: [EventEntry] = []
         let calendar = Calendar.current
@@ -39,31 +39,31 @@ struct Provider: AppIntentTimelineProvider {
     }
 }
 
-struct WidgetyWidgetEntryView : View {
-    var entry: Provider.Entry
+struct CountdownWidgetEntryView : View {
+    var entry: CountdownProvider.Entry
     @Environment(\.widgetFamily) var family
     
     var body: some View {
         switch family {
         case .systemSmall:
-            SmallWidgetView(entry: entry).widgetURL(URL(string: "widgety://countdowns"))
+            CountdownSmallWidgetView(entry: entry).widgetURL(URL(string: "widgety://countdowns"))
         case .systemMedium:
-            MediumWidgetView(entry: entry).widgetURL(URL(string: "widgety://countdowns"))
+            CountdownMediumWidgetView(entry: entry).widgetURL(URL(string: "widgety://countdowns"))
         default:
             Text("Unsupported")
         }
     }
 }
 
-struct WidgetyWidget: Widget {
+struct CountdownWidget: Widget {
     let kind: String = "WidgetyWidget"
     
     var body: some WidgetConfiguration {
         AppIntentConfiguration(
             kind: kind,
-            intent: ConfigurationAppIntent.self,
-            provider: Provider()) { entry in
-                WidgetyWidgetEntryView(entry: entry)
+            intent: CountdownWidgetConfigurationAppIntent.self,
+            provider: CountdownProvider()) { entry in
+                CountdownWidgetEntryView(entry: entry)
                     .containerBackground( for: .widget) {
                         ContainerRelativeShape().fill(Theme.bgColor(theme:entry.color)) }
             }
@@ -75,7 +75,7 @@ struct WidgetyWidget: Widget {
 }
 
 #Preview(as: .systemMedium) {
-    WidgetyWidget()
+    CountdownWidget()
 } timeline: {
     EventEntry(name: "end of the world again", daysUntil: 1200, date: .now, color: ThemeColor.red)
     EventEntry(name: "end of the world",daysUntil: 0, date: .now, color: ThemeColor.purple)

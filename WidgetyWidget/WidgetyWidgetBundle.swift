@@ -11,7 +11,7 @@ import SwiftUI
 @main
 struct WidgetyWidgetBundle: WidgetBundle {
     var body: some Widget {
-        WidgetyWidget()
+        CountdownWidget()
         AffirmationWidget()
     }
 }

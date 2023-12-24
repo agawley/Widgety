@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		401B68B12AFA7C7500281D6B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B68B02AFA7C7500281D6B /* Theme.swift */; };
 		401B68B22AFA7C7500281D6B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B68B02AFA7C7500281D6B /* Theme.swift */; };
-		401B68B42AFBD7BE00281D6B /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B68B32AFBD7BE00281D6B /* SmallWidgetView.swift */; };
-		401B68B52AFBD7BE00281D6B /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B68B32AFBD7BE00281D6B /* SmallWidgetView.swift */; };
+		401B68B42AFBD7BE00281D6B /* CountdownSmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B68B32AFBD7BE00281D6B /* CountdownSmallWidgetView.swift */; };
+		401B68B52AFBD7BE00281D6B /* CountdownSmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B68B32AFBD7BE00281D6B /* CountdownSmallWidgetView.swift */; };
 		401C0FFA2B0FBE7300EE6CF0 /* CountdownListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FF92B0FBE7300EE6CF0 /* CountdownListView.swift */; };
-		401C0FFC2B10E22300EE6CF0 /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FFB2B10E22300EE6CF0 /* MediumWidgetView.swift */; };
-		401C0FFD2B10E22400EE6CF0 /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FFB2B10E22300EE6CF0 /* MediumWidgetView.swift */; };
+		401C0FFC2B10E22300EE6CF0 /* CountdownMediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FFB2B10E22300EE6CF0 /* CountdownMediumWidgetView.swift */; };
+		401C0FFD2B10E22400EE6CF0 /* CountdownMediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FFB2B10E22300EE6CF0 /* CountdownMediumWidgetView.swift */; };
 		40393B6D2B2DBE5900F91AD7 /* Affirmations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */; };
 		40393B702B2DC26B00F91AD7 /* AffirmationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6F2B2DC26B00F91AD7 /* AffirmationWidget.swift */; };
 		40393B732B2DC49D00F91AD7 /* AffirmationWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */; };
@@ -29,8 +29,8 @@
 		40C4E8052AF818540067CA63 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40C4E8042AF818540067CA63 /* WidgetKit.framework */; };
 		40C4E8072AF818540067CA63 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40C4E8062AF818540067CA63 /* SwiftUI.framework */; };
 		40C4E80A2AF818540067CA63 /* WidgetyWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E8092AF818540067CA63 /* WidgetyWidgetBundle.swift */; };
-		40C4E80C2AF818540067CA63 /* WidgetyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E80B2AF818540067CA63 /* WidgetyWidget.swift */; };
-		40C4E80E2AF818540067CA63 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E80D2AF818540067CA63 /* AppIntent.swift */; };
+		40C4E80C2AF818540067CA63 /* CountdownWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E80B2AF818540067CA63 /* CountdownWidget.swift */; };
+		40C4E80E2AF818540067CA63 /* CountdownConfigAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E80D2AF818540067CA63 /* CountdownConfigAppIntent.swift */; };
 		40C4E8102AF818590067CA63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C4E80F2AF818590067CA63 /* Assets.xcassets */; };
 		40C4E8142AF818590067CA63 /* WidgetyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 40C4E8022AF818540067CA63 /* WidgetyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		40C4E81A2AF8F5670067CA63 /* CountdownDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E8192AF8F5660067CA63 /* CountdownDetailView.swift */; };
@@ -64,9 +64,9 @@
 
 /* Begin PBXFileReference section */
 		401B68B02AFA7C7500281D6B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		401B68B32AFBD7BE00281D6B /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
+		401B68B32AFBD7BE00281D6B /* CountdownSmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownSmallWidgetView.swift; sourceTree = "<group>"; };
 		401C0FF92B0FBE7300EE6CF0 /* CountdownListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownListView.swift; sourceTree = "<group>"; };
-		401C0FFB2B10E22300EE6CF0 /* MediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetView.swift; sourceTree = "<group>"; };
+		401C0FFB2B10E22300EE6CF0 /* CountdownMediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownMediumWidgetView.swift; sourceTree = "<group>"; };
 		40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmations.swift; sourceTree = "<group>"; };
 		40393B6F2B2DC26B00F91AD7 /* AffirmationWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationWidget.swift; sourceTree = "<group>"; };
 		40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationWidgetView.swift; sourceTree = "<group>"; };
@@ -84,8 +84,8 @@
 		40C4E8042AF818540067CA63 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		40C4E8062AF818540067CA63 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		40C4E8092AF818540067CA63 /* WidgetyWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetyWidgetBundle.swift; sourceTree = "<group>"; };
-		40C4E80B2AF818540067CA63 /* WidgetyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetyWidget.swift; sourceTree = "<group>"; };
-		40C4E80D2AF818540067CA63 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		40C4E80B2AF818540067CA63 /* CountdownWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownWidget.swift; sourceTree = "<group>"; };
+		40C4E80D2AF818540067CA63 /* CountdownConfigAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownConfigAppIntent.swift; sourceTree = "<group>"; };
 		40C4E80F2AF818590067CA63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40C4E8112AF818590067CA63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40C4E8192AF8F5660067CA63 /* CountdownDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownDetailView.swift; sourceTree = "<group>"; };
@@ -200,11 +200,11 @@
 			isa = PBXGroup;
 			children = (
 				40C4E8092AF818540067CA63 /* WidgetyWidgetBundle.swift */,
-				40C4E80B2AF818540067CA63 /* WidgetyWidget.swift */,
-				401B68B32AFBD7BE00281D6B /* SmallWidgetView.swift */,
+				40C4E80B2AF818540067CA63 /* CountdownWidget.swift */,
+				401B68B32AFBD7BE00281D6B /* CountdownSmallWidgetView.swift */,
 				40393B742B2DC68500F91AD7 /* Affirmation */,
-				401C0FFB2B10E22300EE6CF0 /* MediumWidgetView.swift */,
-				40C4E80D2AF818540067CA63 /* AppIntent.swift */,
+				401C0FFB2B10E22300EE6CF0 /* CountdownMediumWidgetView.swift */,
+				40C4E80D2AF818540067CA63 /* CountdownConfigAppIntent.swift */,
 				40C4E80F2AF818590067CA63 /* Assets.xcassets */,
 				40C4E8112AF818590067CA63 /* Info.plist */,
 			);
@@ -316,14 +316,14 @@
 				40C4E81C2AF90A980067CA63 /* Events.swift in Sources */,
 				40393B772B2DCDEF00F91AD7 /* AffirmationListView.swift in Sources */,
 				40393B792B2DD01F00F91AD7 /* AffirmationContentView.swift in Sources */,
-				401C0FFC2B10E22300EE6CF0 /* MediumWidgetView.swift in Sources */,
+				401C0FFC2B10E22300EE6CF0 /* CountdownMediumWidgetView.swift in Sources */,
 				40C4E7F22AF817D00067CA63 /* CountdownContentView.swift in Sources */,
 				40393B6D2B2DBE5900F91AD7 /* Affirmations.swift in Sources */,
 				40393B7C2B2DD12B00F91AD7 /* AffirmationWidgetView.swift in Sources */,
 				401B68B12AFA7C7500281D6B /* Theme.swift in Sources */,
 				401C0FFA2B0FBE7300EE6CF0 /* CountdownListView.swift in Sources */,
 				40C4E81A2AF8F5670067CA63 /* CountdownDetailView.swift in Sources */,
-				401B68B42AFBD7BE00281D6B /* SmallWidgetView.swift in Sources */,
+				401B68B42AFBD7BE00281D6B /* CountdownSmallWidgetView.swift in Sources */,
 				40C4E7F02AF817D00067CA63 /* WidgetyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,13 +335,13 @@
 				40C4E81D2AF90A980067CA63 /* Events.swift in Sources */,
 				40393B702B2DC26B00F91AD7 /* AffirmationWidget.swift in Sources */,
 				40C4E80A2AF818540067CA63 /* WidgetyWidgetBundle.swift in Sources */,
-				401C0FFD2B10E22400EE6CF0 /* MediumWidgetView.swift in Sources */,
+				401C0FFD2B10E22400EE6CF0 /* CountdownMediumWidgetView.swift in Sources */,
 				401B68B22AFA7C7500281D6B /* Theme.swift in Sources */,
-				40C4E80C2AF818540067CA63 /* WidgetyWidget.swift in Sources */,
+				40C4E80C2AF818540067CA63 /* CountdownWidget.swift in Sources */,
 				40393B732B2DC49D00F91AD7 /* AffirmationWidgetView.swift in Sources */,
-				401B68B52AFBD7BE00281D6B /* SmallWidgetView.swift in Sources */,
+				401B68B52AFBD7BE00281D6B /* CountdownSmallWidgetView.swift in Sources */,
 				40393B7D2B2DF62200F91AD7 /* Affirmations.swift in Sources */,
-				40C4E80E2AF818540067CA63 /* AppIntent.swift in Sources */,
+				40C4E80E2AF818540067CA63 /* CountdownConfigAppIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

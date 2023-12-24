@@ -10,7 +10,7 @@ import AppIntents
 
 
 
-struct ConfigurationAppIntent: WidgetConfigurationIntent {
+struct CountdownWidgetConfigurationAppIntent: WidgetConfigurationIntent {
     static var title: LocalizedStringResource = "Select Event"
     static var description = IntentDescription("Select the event to countdown towards.")
 
