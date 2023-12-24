@@ -26,7 +26,7 @@ struct DescriptiveSectionView: View {
 
 
 
-struct ListView: View {
+struct CountdownListView: View {
     @Binding var items: [Event]
     @Binding var selectedIndex: Int?
 
@@ -64,7 +64,7 @@ struct ListView: View {
         @State var events = [Event(id: UUID(), name: "An Event", date: .now, color: .orange), Event(id: UUID(), name: "Another Event", date: .now, color: .red), Event(id: UUID(), name: "A third event", date: .now, color: .blue)]
         @State var selectedIndex: Int?
         
-        ListView(items: $events, selectedIndex: $selectedIndex)
+        CountdownListView(items: $events, selectedIndex: $selectedIndex)
         
     }
     

@@ -11,7 +11,7 @@
 		401B68B22AFA7C7500281D6B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B68B02AFA7C7500281D6B /* Theme.swift */; };
 		401B68B42AFBD7BE00281D6B /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B68B32AFBD7BE00281D6B /* SmallWidgetView.swift */; };
 		401B68B52AFBD7BE00281D6B /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B68B32AFBD7BE00281D6B /* SmallWidgetView.swift */; };
-		401C0FFA2B0FBE7300EE6CF0 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FF92B0FBE7300EE6CF0 /* ListView.swift */; };
+		401C0FFA2B0FBE7300EE6CF0 /* CountdownListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FF92B0FBE7300EE6CF0 /* CountdownListView.swift */; };
 		401C0FFC2B10E22300EE6CF0 /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FFB2B10E22300EE6CF0 /* MediumWidgetView.swift */; };
 		401C0FFD2B10E22400EE6CF0 /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FFB2B10E22300EE6CF0 /* MediumWidgetView.swift */; };
 		40393B6D2B2DBE5900F91AD7 /* Affirmations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */; };
@@ -23,7 +23,7 @@
 		40393B7C2B2DD12B00F91AD7 /* AffirmationWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */; };
 		40393B7D2B2DF62200F91AD7 /* Affirmations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */; };
 		40C4E7F02AF817D00067CA63 /* WidgetyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E7EF2AF817D00067CA63 /* WidgetyApp.swift */; };
-		40C4E7F22AF817D00067CA63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E7F12AF817D00067CA63 /* ContentView.swift */; };
+		40C4E7F22AF817D00067CA63 /* CountdownContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E7F12AF817D00067CA63 /* CountdownContentView.swift */; };
 		40C4E7F42AF817D30067CA63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C4E7F32AF817D30067CA63 /* Assets.xcassets */; };
 		40C4E7F82AF817D30067CA63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C4E7F72AF817D30067CA63 /* Preview Assets.xcassets */; };
 		40C4E8052AF818540067CA63 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40C4E8042AF818540067CA63 /* WidgetKit.framework */; };
@@ -33,7 +33,7 @@
 		40C4E80E2AF818540067CA63 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E80D2AF818540067CA63 /* AppIntent.swift */; };
 		40C4E8102AF818590067CA63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C4E80F2AF818590067CA63 /* Assets.xcassets */; };
 		40C4E8142AF818590067CA63 /* WidgetyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 40C4E8022AF818540067CA63 /* WidgetyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		40C4E81A2AF8F5670067CA63 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E8192AF8F5660067CA63 /* DetailView.swift */; };
+		40C4E81A2AF8F5670067CA63 /* CountdownDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E8192AF8F5660067CA63 /* CountdownDetailView.swift */; };
 		40C4E81C2AF90A980067CA63 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E81B2AF90A980067CA63 /* Events.swift */; };
 		40C4E81D2AF90A980067CA63 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E81B2AF90A980067CA63 /* Events.swift */; };
 /* End PBXBuildFile section */
@@ -65,7 +65,7 @@
 /* Begin PBXFileReference section */
 		401B68B02AFA7C7500281D6B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		401B68B32AFBD7BE00281D6B /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
-		401C0FF92B0FBE7300EE6CF0 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		401C0FF92B0FBE7300EE6CF0 /* CountdownListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownListView.swift; sourceTree = "<group>"; };
 		401C0FFB2B10E22300EE6CF0 /* MediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetView.swift; sourceTree = "<group>"; };
 		40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmations.swift; sourceTree = "<group>"; };
 		40393B6F2B2DC26B00F91AD7 /* AffirmationWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationWidget.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 		40393B7F2B2F4ED300F91AD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		40C4E7EC2AF817D00067CA63 /* Widgety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Widgety.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C4E7EF2AF817D00067CA63 /* WidgetyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetyApp.swift; sourceTree = "<group>"; };
-		40C4E7F12AF817D00067CA63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		40C4E7F12AF817D00067CA63 /* CountdownContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownContentView.swift; sourceTree = "<group>"; };
 		40C4E7F32AF817D30067CA63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40C4E7F52AF817D30067CA63 /* Widgety.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widgety.entitlements; sourceTree = "<group>"; };
 		40C4E7F72AF817D30067CA63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		40C4E80D2AF818540067CA63 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		40C4E80F2AF818590067CA63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40C4E8112AF818590067CA63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		40C4E8192AF8F5660067CA63 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		40C4E8192AF8F5660067CA63 /* CountdownDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownDetailView.swift; sourceTree = "<group>"; };
 		40C4E81B2AF90A980067CA63 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		40C4E81E2AF916640067CA63 /* WidgetyWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetyWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +113,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		400A7C122B389AF6000A9F99 /* Countdowns */ = {
+			isa = PBXGroup;
+			children = (
+				40C4E7F12AF817D00067CA63 /* CountdownContentView.swift */,
+				401C0FF92B0FBE7300EE6CF0 /* CountdownListView.swift */,
+				40C4E8192AF8F5660067CA63 /* CountdownDetailView.swift */,
+				40C4E81B2AF90A980067CA63 /* Events.swift */,
+			);
+			name = Countdowns;
+			sourceTree = "<group>";
+		};
 		40393B742B2DC68500F91AD7 /* Affirmation */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,12 +168,9 @@
 			isa = PBXGroup;
 			children = (
 				40393B7F2B2F4ED300F91AD7 /* Info.plist */,
+				400A7C122B389AF6000A9F99 /* Countdowns */,
 				40C4E7EF2AF817D00067CA63 /* WidgetyApp.swift */,
-				40C4E7F12AF817D00067CA63 /* ContentView.swift */,
 				40393B752B2DCDC500F91AD7 /* Affirmation */,
-				401C0FF92B0FBE7300EE6CF0 /* ListView.swift */,
-				40C4E8192AF8F5660067CA63 /* DetailView.swift */,
-				40C4E81B2AF90A980067CA63 /* Events.swift */,
 				401B68B02AFA7C7500281D6B /* Theme.swift */,
 				40C4E7F32AF817D30067CA63 /* Assets.xcassets */,
 				40C4E7F52AF817D30067CA63 /* Widgety.entitlements */,
@@ -309,12 +317,12 @@
 				40393B772B2DCDEF00F91AD7 /* AffirmationListView.swift in Sources */,
 				40393B792B2DD01F00F91AD7 /* AffirmationContentView.swift in Sources */,
 				401C0FFC2B10E22300EE6CF0 /* MediumWidgetView.swift in Sources */,
-				40C4E7F22AF817D00067CA63 /* ContentView.swift in Sources */,
+				40C4E7F22AF817D00067CA63 /* CountdownContentView.swift in Sources */,
 				40393B6D2B2DBE5900F91AD7 /* Affirmations.swift in Sources */,
 				40393B7C2B2DD12B00F91AD7 /* AffirmationWidgetView.swift in Sources */,
 				401B68B12AFA7C7500281D6B /* Theme.swift in Sources */,
-				401C0FFA2B0FBE7300EE6CF0 /* ListView.swift in Sources */,
-				40C4E81A2AF8F5670067CA63 /* DetailView.swift in Sources */,
+				401C0FFA2B0FBE7300EE6CF0 /* CountdownListView.swift in Sources */,
+				40C4E81A2AF8F5670067CA63 /* CountdownDetailView.swift in Sources */,
 				401B68B42AFBD7BE00281D6B /* SmallWidgetView.swift in Sources */,
 				40C4E7F02AF817D00067CA63 /* WidgetyApp.swift in Sources */,
 			);

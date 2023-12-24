@@ -33,7 +33,7 @@ extension View {
     }
 }
 
-struct DetailView: View {
+struct CountdownDetailView: View {
     @Binding var items: [Event]
     var selectedIndex: Int?
     

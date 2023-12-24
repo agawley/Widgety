@@ -37,7 +37,7 @@ struct WidgetyApp: App {
     var body: some Scene {
         WindowGroup {
             TabView(selection: $activeTab) {
-                ContentView()
+                CountdownContentView()
                     .tabItem {
                         Label("Countdowns", systemImage: "clock.arrow.circlepath")
                     }.tag(TabIdentifier.countdowns)

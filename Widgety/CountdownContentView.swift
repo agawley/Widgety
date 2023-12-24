@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CountdownContentView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @State private var columnVisibility: NavigationSplitViewVisibility = .automatic
     @State var events = Events.getDefault()
@@ -16,9 +16,9 @@ struct ContentView: View {
 
     var body: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
-            ListView(items: $events.items, selectedIndex: $selectedIndex).navigationTitle("Countdowns")
+            CountdownListView(items: $events.items, selectedIndex: $selectedIndex).navigationTitle("Countdowns")
         } detail: {
-            DetailView(items: $events.items, selectedIndex: selectedIndex)
+            CountdownDetailView(items: $events.items, selectedIndex: selectedIndex)
         }
         .navigationSplitViewStyle(.balanced)
         .onAppear() {
@@ -39,5 +39,5 @@ struct ContentView: View {
 
 
 #Preview {
-    ContentView()
+    CountdownContentView()
 }
