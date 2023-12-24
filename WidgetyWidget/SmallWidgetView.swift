@@ -56,11 +56,11 @@ struct SmallWidgetView: View {
                                     .padding(.top, 5)
                             }
                             Text(event.name)
-                                .font(.system(size:20, weight:.heavy, design: .rounded))
+                                .font(.system(size:28, weight:.heavy, design: .rounded))
                                 .foregroundColor(Theme.textColor(theme:event.color))
                                 .fontWeight(.bold)
                                 .multilineTextAlignment(.center)
-                                .minimumScaleFactor(0.6)
+                                .minimumScaleFactor(0.4)
                                 .frame(height: 50, alignment: .center)
                                 .layoutPriority(1)
                         }.padding(20)

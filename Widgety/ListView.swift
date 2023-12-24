@@ -17,7 +17,10 @@ struct DescriptiveSectionView: View {
                 .font(.subheadline)
                 .listRowBackground(colorScheme == .dark ? Color(.systemBackground) : Color(.secondarySystemBackground))
                 .padding([.horizontal], 0)
-        }.listRowInsets(EdgeInsets(top: 0,leading: 0,bottom: 0,trailing: 0))
+                .padding([.top], 20)
+        }
+        .listRowInsets(EdgeInsets(top: 0,leading: 0,bottom: 0,trailing: 0))
+        .listSectionSpacing(20)
     }
 }
 
@@ -55,3 +58,15 @@ struct ListView: View {
         }
     }
 }
+
+#Preview {
+    HStack {
+        @State var events = [Event(id: UUID(), name: "An Event", date: .now, color: .orange), Event(id: UUID(), name: "Another Event", date: .now, color: .red), Event(id: UUID(), name: "A third event", date: .now, color: .blue)]
+        @State var selectedIndex: Int?
+        
+        ListView(items: $events, selectedIndex: $selectedIndex)
+        
+    }
+    
+}
+
