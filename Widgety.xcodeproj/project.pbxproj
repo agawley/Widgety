@@ -126,8 +126,8 @@
 		40393B742B2DC68500F91AD7 /* Affirmation */ = {
 			isa = PBXGroup;
 			children = (
-				40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */,
 				40393B6F2B2DC26B00F91AD7 /* AffirmationWidget.swift */,
+				40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */,
 			);
 			name = Affirmation;
 			sourceTree = "<group>";
@@ -135,10 +135,10 @@
 		40393B752B2DCDC500F91AD7 /* Affirmation */ = {
 			isa = PBXGroup;
 			children = (
-				40393B762B2DCDEF00F91AD7 /* AffirmationListView.swift */,
 				40393B782B2DD01F00F91AD7 /* AffirmationContentView.swift */,
-				40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */,
+				40393B762B2DCDEF00F91AD7 /* AffirmationListView.swift */,
 				40393B7A2B2DD0B800F91AD7 /* AffirmationDetailView.swift */,
+				40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */,
 			);
 			name = Affirmation;
 			sourceTree = "<group>";
