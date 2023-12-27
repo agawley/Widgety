@@ -65,6 +65,7 @@ struct CountdownDetailView: View {
                             VStack(alignment: .leading) {
                                 Text("Widget preview").fontWeight(.bold).multilineTextAlignment(.leading)
                                 Text("To install, go to your homescreen, long press and then tap the + button.").multilineTextAlignment(.leading).font(.caption)
+                                Text("Then 'Edit Widget' and select this event.").multilineTextAlignment(.leading).font(.caption)
                             }.frame(maxWidth: 200)
                             
                             Spacer()

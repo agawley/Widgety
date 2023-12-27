@@ -29,18 +29,28 @@ struct CountdownSmallWidgetView: View {
                             .foregroundColor(Theme.textColor(theme:event.color))
                             .multilineTextAlignment(.center)
                             .padding([.horizontal], 10)
-                    } else if event
-                        .daysUntil == 0 {
-                        VStack {
-                            Text(event.name).font(.system(.title3, design: .rounded)).foregroundColor(Theme.textColor(theme:event.color)).fontWeight(.bold)
-                                .multilineTextAlignment(.center).minimumScaleFactor(0.6).padding([.bottom], 10)
-                            Text("is TODAY!").font(.system(.title2, design: .rounded)).foregroundColor(Theme.textColor(theme:event.color)).fontWeight(.bold)
+                    } else if event.daysUntil == 0 {
+                        VStack(spacing:5) {
+                            Text(event.name)
+                                .font(.system(size:30, weight:.heavy,design: .rounded))
+                                .foregroundColor(Theme.textColor(theme:event.color))
+                                .multilineTextAlignment(.center)
                                 .minimumScaleFactor(0.6)
-                        }
+                            Text("is")
+                                .font(.system(size:20,design: .rounded))
+                                .foregroundColor(Theme.textColor(theme:event.color))
+                                .multilineTextAlignment(.center)
+                                .minimumScaleFactor(0.6)
+                            Text("TODAY!")
+                                .font(.system(size:30, weight:.heavy,design: .rounded))
+                                .foregroundColor(Theme.textColor(theme:event.color))
+                                .multilineTextAlignment(.center)
+                                .minimumScaleFactor(0.6)
+                        }.padding(20)
                     } else {
                         VStack(spacing:0) {
                             Text(abs(event.daysUntil).formatted())
-                                .font(.system(size:abs(event.daysUntil) > 999 ? 45 : 55, weight:.heavy,design: .rounded))
+                                .font(.system(size:abs(event.daysUntil) > 999 ? 40 : 55, weight:.heavy,design: .rounded))
                                 .foregroundColor(Theme.textColor(theme:event.color))
                                 .layoutPriority(2)
                                 .lineLimit(1)
@@ -69,10 +79,4 @@ struct CountdownSmallWidgetView: View {
             
         }
     }
-}
-
-#Preview {
-    HStack{
-        CountdownSmallWidgetView(entry: EventEntry(name: "end of term - yay!", daysUntil: 1200, date: .now, color: ThemeColor.red))
-    }.frame(width: 175, height: 175).background(.red).cornerRadius(25)
 }

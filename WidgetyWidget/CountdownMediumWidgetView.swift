@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct CountdownMediumWidgetView: View {
     
@@ -46,12 +47,19 @@ struct CountdownMediumWidgetView: View {
                             .foregroundColor(Theme.textColor(theme:event.color))
                             .multilineTextAlignment(.center)
                     } else if event.daysUntil == 0 {
-                        VStack {
-                            Text(event.name).font(.system(.title3, design: .rounded)).foregroundColor(Theme.textColor(theme:event.color)).fontWeight(.bold)
-                                .multilineTextAlignment(.center).minimumScaleFactor(0.6).padding([.bottom], 10)
-                            Text("is TODAY!").font(.system(.title2, design: .rounded)).foregroundColor(Theme.textColor(theme:event.color)).fontWeight(.bold)
+                        VStack(spacing:0) {
+                            Text(event.name)
+                                .font(.system(size:40, weight:.heavy,design: .rounded))
+                                .foregroundColor(Theme.textColor(theme:event.color))
+                                .multilineTextAlignment(.center)
                                 .minimumScaleFactor(0.6)
-                        }
+                                .padding([.bottom], 10)
+                            Text("is TODAY!")
+                                .font(.system(size:40, weight:.heavy,design: .rounded))
+                                .foregroundColor(Theme.textColor(theme:event.color))
+                                .multilineTextAlignment(.center)
+                                .minimumScaleFactor(0.6)
+                        }.padding(20)
                     } else {
                         VStack(spacing:0) {
                             Text(timingString(from: event))
@@ -60,6 +68,7 @@ struct CountdownMediumWidgetView: View {
                                 .layoutPriority(2)
                                 .lineLimit(1)
                                 .frame(height: 50, alignment: .center)
+                                .minimumScaleFactor(0.6)
                             HStack(alignment: .center) {
                                 Text(event.daysUntil < 0 ? "since" : "until" )
                                     .font(.title2)
@@ -83,11 +92,5 @@ struct CountdownMediumWidgetView: View {
             }
         }
     }
-}
-
-#Preview {
-    HStack{
-        CountdownMediumWidgetView(entry: EventEntry(name: "end of term - yay!", daysUntil: 10, date: .now, color: ThemeColor.red))
-    }.frame(width: 350, height: 175).background(.red).cornerRadius(25)
 }
 
