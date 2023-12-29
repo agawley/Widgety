@@ -43,9 +43,3 @@ struct AffirmationWidgetView: View {
         }
     }
 }
-
-#Preview {
-    HStack{
-        CountdownSmallWidgetView(entry: EventEntry(name: "end of term - yay!", daysUntil: 1200, date: .now, color: ThemeColor.red))
-    }.frame(width: 175, height: 175).background(.red).cornerRadius(25)
-}

@@ -56,7 +56,7 @@ struct Event: Identifiable, Hashable, Codable, AppEntity {
         let formatter = DateFormatter()
         formatter.dateFormat = "dM"
         let tag = (formatter.string(from: date)) == "2512" ? Tags.xmas : nil;
-        return EventEntry(name: name, daysUntil: daysUntil(fromDate: entryDate), date: entryDate,  color: color, tag: tag)
+        return EventEntry(id: id, name: name, daysUntil: daysUntil(fromDate: entryDate), date: entryDate,  color: color, tag: tag)
     }
 }
 
@@ -93,6 +93,7 @@ enum Tags: String, CaseIterable, Identifiable, Codable, Hashable {
 
 struct EventEntry: TimelineEntry {
     static let NO_OPTION_NAME = "xyx_NO_OPTION_SET_xyx"
+    let id: UUID
     let name: String
     let daysUntil: Int
     let date: Date

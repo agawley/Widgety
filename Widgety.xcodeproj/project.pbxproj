@@ -167,8 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				40393B7F2B2F4ED300F91AD7 /* Info.plist */,
-				400A7C122B389AF6000A9F99 /* Countdowns */,
 				40C4E7EF2AF817D00067CA63 /* WidgetyApp.swift */,
+				400A7C122B389AF6000A9F99 /* Countdowns */,
 				40393B752B2DCDC500F91AD7 /* Affirmation */,
 				401B68B02AFA7C7500281D6B /* Theme.swift */,
 				40C4E7F32AF817D30067CA63 /* Assets.xcassets */,

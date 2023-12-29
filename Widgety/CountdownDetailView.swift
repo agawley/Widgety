@@ -71,9 +71,7 @@ struct CountdownDetailView: View {
                             Spacer()
                         }.padding([.top,.bottom], 20)
                     }
-                    
                     Spacer()
-                    
                 }
             } else {
                 Text("Select an event to preview / edit").font(.title)

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CountdownProvider: AppIntentTimelineProvider {
     
-    private static let fallbackEntry = EventEntry(name: "something amazing", daysUntil:314, date: .now, color: ThemeColor.blue)
+    private static let fallbackEntry = EventEntry(id: UUID(), name: "something amazing", daysUntil:314, date: .now, color: ThemeColor.blue)
     
     func placeholder(in context: Context) -> EventEntry {
         Events().items.first?.timelineEntry(entryDate: .now) ?? CountdownProvider.fallbackEntry
@@ -31,7 +31,7 @@ struct CountdownProvider: AppIntentTimelineProvider {
             let entryDate = calendar.date(byAdding: .day, value: dayOffset, to: currentDate)!
             let startOfDay = calendar.startOfDay(for: entryDate)
             let tenMinOffsetFromMidnight = calendar.date(byAdding: .minute, value: 10, to: startOfDay)!
-            let entry = configuration.event?.timelineEntry(entryDate: tenMinOffsetFromMidnight) ??  EventEntry(name: EventEntry.NO_OPTION_NAME, daysUntil:0, date: .now, color: ThemeColor.grey)
+            let entry = configuration.event?.timelineEntry(entryDate: tenMinOffsetFromMidnight) ??  EventEntry(id: UUID(), name: EventEntry.NO_OPTION_NAME, daysUntil:0, date: .now, color: ThemeColor.grey)
             entries.append(entry)
         }
 
@@ -46,7 +46,7 @@ struct CountdownWidgetEntryView : View {
     var body: some View {
         switch family {
         case .systemSmall:
-            CountdownSmallWidgetView(entry: entry).widgetURL(URL(string: "widgety://countdowns"))
+            CountdownSmallWidgetView(entry: entry).widgetURL(URL(string: "widgety://countdowns?\(entry.id.uuidString)"))
         case .systemMedium:
             CountdownMediumWidgetView(entry: entry).widgetURL(URL(string: "widgety://countdowns"))
         default:
@@ -77,6 +77,6 @@ struct CountdownWidget: Widget {
 #Preview(as: .systemMedium) {
     CountdownWidget()
 } timeline: {
-    EventEntry(name: "end of the world again", daysUntil: 1200, date: .now, color: ThemeColor.red)
-    EventEntry(name: "end of the world",daysUntil: 0, date: .now, color: ThemeColor.purple)
+    EventEntry(id: UUID(), name: "end of the world again", daysUntil: 1200, date: .now, color: ThemeColor.red)
+    EventEntry(id: UUID(), name: "end of the world",daysUntil: 0, date: .now, color: ThemeColor.purple)
 }

@@ -26,6 +26,11 @@ extension URL {
     default: return nil
     }
   }
+    
+    var countdownIdentifier: String? {
+        guard tabIdentifier == .countdowns else { return nil }
+        return query()
+    }
 }
 
 
