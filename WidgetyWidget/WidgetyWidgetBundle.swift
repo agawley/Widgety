@@ -13,5 +13,6 @@ struct WidgetyWidgetBundle: WidgetBundle {
     var body: some Widget {
         CountdownWidget()
         AffirmationWidget()
+        FidgetyWidget()
     }
 }
