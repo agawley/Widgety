@@ -101,6 +101,13 @@ struct EventEntry: TimelineEntry {
     var tag: Tags?
 }
 
+struct EventsTimelineEntry: TimelineEntry {
+    static let NO_OPTION_NAME = "xyx_NO_OPTION_SET_xyx"
+    let date: Date
+    let events: [Event]
+    let index: Int
+}
+
 @Observable
 class Events {
     

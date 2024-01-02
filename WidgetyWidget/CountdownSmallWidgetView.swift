@@ -7,12 +7,36 @@
 
 import SwiftUI
 
+
+struct CountdownToggleStyle: ToggleStyle {
+    var entry: EventsTimelineEntry
+    
+    func makeBody(configuration: Configuration) -> some View {
+        let currentEvent = entry.events[entry.index]
+        let nextEvent = entry.events[(entry.index + 1) % entry.events.count]
+        configuration.isOn
+            ? CountdownSmallWidgetInnerView(event:nextEvent.timelineEntry(entryDate: entry.date))
+            : CountdownSmallWidgetInnerView(event:currentEvent.timelineEntry(entryDate: entry.date))
+    }
+}
+
 struct CountdownSmallWidgetView: View {
-    var entry: EventEntry?
+    var entry: EventsTimelineEntry
     
     var body: some View {
         ZStack {
-            if let event = entry {
+            Toggle(isOn: false, intent: NextCountdownIntent()) {
+                Text("Not shown")
+            }.toggleStyle(CountdownToggleStyle(entry: entry)).frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+    }
+}
+
+struct CountdownSmallWidgetInnerView: View {
+    var event: EventEntry
+    
+    var body: some View {
+        ZStack {
                 ZStack {
                     if (event.tag == .xmas) {
                         Image("tree")
@@ -73,10 +97,7 @@ struct CountdownSmallWidgetView: View {
                         }.padding(20)
                     }
                 }
-            } else {
-                Text("Open the app to create an event")
-            }
-            
         }
     }
 }
+

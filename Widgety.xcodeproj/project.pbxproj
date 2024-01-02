@@ -18,6 +18,8 @@
 		4033C3CC2B40683600103933 /* FidgetyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033C3C42B3F200B00103933 /* FidgetyWidget.swift */; };
 		4033C3D02B421FA500103933 /* FidgetyIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033C3CD2B42174600103933 /* FidgetyIntent.swift */; };
 		4033C3D12B421FA900103933 /* FidgetyIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033C3CD2B42174600103933 /* FidgetyIntent.swift */; };
+		4033C3D32B447E5F00103933 /* NextCountdownIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033C3D22B447E5F00103933 /* NextCountdownIntent.swift */; };
+		4033C3D42B447F1500103933 /* NextCountdownIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033C3D22B447E5F00103933 /* NextCountdownIntent.swift */; };
 		40393B6D2B2DBE5900F91AD7 /* Affirmations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */; };
 		40393B702B2DC26B00F91AD7 /* AffirmationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6F2B2DC26B00F91AD7 /* AffirmationWidget.swift */; };
 		40393B732B2DC49D00F91AD7 /* AffirmationWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */; };
@@ -76,6 +78,7 @@
 		4033C3C62B3F213C00103933 /* FidgetyWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FidgetyWidgetView.swift; sourceTree = "<group>"; };
 		4033C3C92B3F909600103933 /* Fidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fidgets.swift; sourceTree = "<group>"; };
 		4033C3CD2B42174600103933 /* FidgetyIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FidgetyIntent.swift; path = WidgetyWidget/FidgetyIntent.swift; sourceTree = SOURCE_ROOT; };
+		4033C3D22B447E5F00103933 /* NextCountdownIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextCountdownIntent.swift; sourceTree = "<group>"; };
 		40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmations.swift; sourceTree = "<group>"; };
 		40393B6F2B2DC26B00F91AD7 /* AffirmationWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationWidget.swift; sourceTree = "<group>"; };
 		40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationWidgetView.swift; sourceTree = "<group>"; };
@@ -242,6 +245,7 @@
 			children = (
 				40C4E80B2AF818540067CA63 /* CountdownWidget.swift */,
 				40C4E80D2AF818540067CA63 /* CountdownConfigAppIntent.swift */,
+				4033C3D22B447E5F00103933 /* NextCountdownIntent.swift */,
 				401B68B32AFBD7BE00281D6B /* CountdownSmallWidgetView.swift */,
 				401C0FFB2B10E22300EE6CF0 /* CountdownMediumWidgetView.swift */,
 			);
@@ -357,6 +361,7 @@
 				40C4E7F22AF817D00067CA63 /* CountdownContentView.swift in Sources */,
 				40393B6D2B2DBE5900F91AD7 /* Affirmations.swift in Sources */,
 				40EF22B02B389E12003EF11C /* CountdownSmallWidgetView.swift in Sources */,
+				4033C3D42B447F1500103933 /* NextCountdownIntent.swift in Sources */,
 				40393B7C2B2DD12B00F91AD7 /* AffirmationWidgetView.swift in Sources */,
 				401B68B12AFA7C7500281D6B /* Theme.swift in Sources */,
 				4033C3D12B421FA900103933 /* FidgetyIntent.swift in Sources */,
@@ -378,6 +383,7 @@
 				401B68B22AFA7C7500281D6B /* Theme.swift in Sources */,
 				40C4E80C2AF818540067CA63 /* CountdownWidget.swift in Sources */,
 				40393B732B2DC49D00F91AD7 /* AffirmationWidgetView.swift in Sources */,
+				4033C3D32B447E5F00103933 /* NextCountdownIntent.swift in Sources */,
 				401B68B52AFBD7BE00281D6B /* CountdownSmallWidgetView.swift in Sources */,
 				40393B7D2B2DF62200F91AD7 /* Affirmations.swift in Sources */,
 				4033C3D02B421FA500103933 /* FidgetyIntent.swift in Sources */,
