@@ -17,16 +17,20 @@ struct Affirmation: Identifiable, Hashable, Codable {
         let affirmations = Affirmations()
         return affirmations.items
     }
-    
-    func timelineEntry(entryDate: Date) -> AffirmationEntry {
-        return AffirmationEntry(phrase: phrase, date: entryDate,  color: color)
-    }
 }
 
 struct AffirmationEntry: TimelineEntry {
-    let phrase: String
+    let affirmations: [Affirmation]
     let date: Date
-    let color: ThemeColor
+    let index: Int
+    
+    func currentAffirmation() -> Affirmation {
+        affirmations[index]
+    }
+    
+    func nextAffirmation() -> Affirmation {
+        affirmations[(index + 1) % affirmations.count]
+    }
 }
 
 @Observable

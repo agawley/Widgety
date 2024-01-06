@@ -12,6 +12,8 @@
 		401B68B52AFBD7BE00281D6B /* CountdownSmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B68B32AFBD7BE00281D6B /* CountdownSmallWidgetView.swift */; };
 		401C0FFA2B0FBE7300EE6CF0 /* CountdownListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FF92B0FBE7300EE6CF0 /* CountdownListView.swift */; };
 		401C0FFD2B10E22400EE6CF0 /* CountdownMediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FFB2B10E22300EE6CF0 /* CountdownMediumWidgetView.swift */; };
+		4033C3D62B49845700103933 /* NextAffirmationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033C3D52B49845600103933 /* NextAffirmationIntent.swift */; };
+		4033C3D72B49845700103933 /* NextAffirmationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033C3D52B49845600103933 /* NextAffirmationIntent.swift */; };
 		40393B6D2B2DBE5900F91AD7 /* Affirmations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */; };
 		40393B702B2DC26B00F91AD7 /* AffirmationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6F2B2DC26B00F91AD7 /* AffirmationWidget.swift */; };
 		40393B732B2DC49D00F91AD7 /* AffirmationWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */; };
@@ -66,6 +68,7 @@
 		401B68B32AFBD7BE00281D6B /* CountdownSmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownSmallWidgetView.swift; sourceTree = "<group>"; };
 		401C0FF92B0FBE7300EE6CF0 /* CountdownListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownListView.swift; sourceTree = "<group>"; };
 		401C0FFB2B10E22300EE6CF0 /* CountdownMediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownMediumWidgetView.swift; sourceTree = "<group>"; };
+		4033C3D52B49845600103933 /* NextAffirmationIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextAffirmationIntent.swift; sourceTree = "<group>"; };
 		40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmations.swift; sourceTree = "<group>"; };
 		40393B6F2B2DC26B00F91AD7 /* AffirmationWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationWidget.swift; sourceTree = "<group>"; };
 		40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationWidgetView.swift; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 			children = (
 				40393B6F2B2DC26B00F91AD7 /* AffirmationWidget.swift */,
 				40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */,
+				4033C3D52B49845600103933 /* NextAffirmationIntent.swift */,
 			);
 			name = Affirmation;
 			sourceTree = "<group>";
@@ -329,6 +333,7 @@
 				40393B7C2B2DD12B00F91AD7 /* AffirmationWidgetView.swift in Sources */,
 				401B68B12AFA7C7500281D6B /* Theme.swift in Sources */,
 				401C0FFA2B0FBE7300EE6CF0 /* CountdownListView.swift in Sources */,
+				4033C3D62B49845700103933 /* NextAffirmationIntent.swift in Sources */,
 				40C4E81A2AF8F5670067CA63 /* CountdownDetailView.swift in Sources */,
 				40C4E7F02AF817D00067CA63 /* WidgetyApp.swift in Sources */,
 			);
@@ -347,6 +352,7 @@
 				40393B732B2DC49D00F91AD7 /* AffirmationWidgetView.swift in Sources */,
 				401B68B52AFBD7BE00281D6B /* CountdownSmallWidgetView.swift in Sources */,
 				40393B7D2B2DF62200F91AD7 /* Affirmations.swift in Sources */,
+				4033C3D72B49845700103933 /* NextAffirmationIntent.swift in Sources */,
 				40C4E80E2AF818540067CA63 /* CountdownConfigAppIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,7 +492,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Widgety/Widgety.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2.1;
+				CURRENT_PROJECT_VERSION = 1.2.2;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Widgety/Preview Content\"";
 				DEVELOPMENT_TEAM = J59UG6Y638;
@@ -508,7 +514,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.6;
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.gawley.Widgety;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -528,7 +534,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Widgety/Widgety.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2.1;
+				CURRENT_PROJECT_VERSION = 1.2.2;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Widgety/Preview Content\"";
 				DEVELOPMENT_TEAM = J59UG6Y638;
@@ -550,7 +556,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.6;
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.gawley.Widgety;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -569,7 +575,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = WidgetyWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2.1;
+				CURRENT_PROJECT_VERSION = 1.2.2;
 				DEVELOPMENT_TEAM = J59UG6Y638;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WidgetyWidget/Info.plist;
@@ -581,7 +587,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.gawley.Widgety.WidgetyWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -599,7 +605,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = WidgetyWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2.1;
+				CURRENT_PROJECT_VERSION = 1.2.2;
 				DEVELOPMENT_TEAM = J59UG6Y638;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WidgetyWidget/Info.plist;
@@ -611,7 +617,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.gawley.Widgety.WidgetyWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

@@ -10,14 +10,19 @@ import SwiftUI
 
 struct AffirmationProvider: TimelineProvider {
     
-    private static let fallbackEntry = AffirmationEntry(phrase: "You are a queen",  date: .now, color: ThemeColor.blue)
+    private static let fallbackEntry = AffirmationEntry(affirmations: [Affirmation(id: UUID(), phrase: "You are a queen",  color: ThemeColor.blue)], date: .now, index: 0)
     
     func placeholder(in context: Context) -> AffirmationEntry {
-        Affirmations().items.first?.timelineEntry(entryDate: .now) ?? AffirmationProvider.fallbackEntry
+        (Affirmations().items.first != nil) 
+        ? AffirmationEntry(affirmations: Affirmations().items, date: .now, index: 0)
+        : AffirmationProvider.fallbackEntry
     }
     
     func getSnapshot(in context: Context, completion: @escaping (AffirmationEntry) -> Void) {
-        completion(Affirmations().items.first?.timelineEntry(entryDate: .now) ?? AffirmationProvider.fallbackEntry)
+        completion(
+            (Affirmations().items.first != nil)
+            ? AffirmationEntry(affirmations: Affirmations().items, date: .now, index: 0)
+            : AffirmationProvider.fallbackEntry)
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<AffirmationEntry>) -> Void) {
@@ -25,13 +30,15 @@ struct AffirmationProvider: TimelineProvider {
         let affirmations = Affirmations().items
         let calendar = Calendar.current
         
+        let affirmationOffset = UserDefaults(suiteName: "group.org.gawley.widgety")!.integer(forKey: NextAffirmationIntent.offsetKey)
+        
         // Generate a timeline consisting of seven entries a day apart, starting from the current date.
         let currentDate = Date()
         for dayOffset in 0 ..< affirmations.count {
             let entryDate = calendar.date(byAdding: .day, value: dayOffset, to: currentDate)!
             let startOfDay = calendar.startOfDay(for: entryDate)
             let day = calendar.dateComponents([.day], from: entryDate).day ?? 0
-            let entry = affirmations[day % affirmations.count].timelineEntry(entryDate: startOfDay)
+            let entry = AffirmationEntry(affirmations: affirmations, date: startOfDay, index: (day + affirmationOffset) % affirmations.count)
             entries.append(entry)
         }
 
@@ -64,7 +71,7 @@ struct AffirmationWidget: Widget {
             provider: AffirmationProvider()) { entry in
                 AffirmationWidgetEntryView(entry: entry)
                     .containerBackground( for: .widget) {
-                        ContainerRelativeShape().fill(Theme.bgColor(theme:entry.color)) }
+                        ContainerRelativeShape().fill(Theme.bgColor(theme:entry.currentAffirmation().color)) }
             }
             .configurationDisplayName("Daily affirmation")
             .description("Get a daily dose of positive vibes")
@@ -73,9 +80,9 @@ struct AffirmationWidget: Widget {
     }
 }
 
-#Preview(as: .systemMedium) {
-    AffirmationWidget()
-} timeline: {
-    AffirmationEntry(phrase: "You are a queen", date: .now, color: ThemeColor.red)
-}
+//#Preview(as: .systemMedium) {
+//    AffirmationWidget()
+//} timeline: {
+//    AffirmationEntry(phrase: "You are a queen", date: .now, color: ThemeColor.red)
+//}
 

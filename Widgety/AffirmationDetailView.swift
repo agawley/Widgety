@@ -26,7 +26,7 @@ struct AffirmationDetailView: View {
                         HStack() {
                             Spacer()
                             HStack {
-                                AffirmationWidgetView(entry: items[selectedIndex].timelineEntry(entryDate: Date())).padding([.horizontal], 5).padding([.vertical], 10)
+                                AffirmationWidgetView(entry: AffirmationEntry(affirmations: items, date: .now, index: selectedIndex)).padding([.horizontal], 5).padding([.vertical], 10)
                             }.frame(width: 175, height: 175).background(Theme.bgColor(theme: items[selectedIndex].color)).cornerRadius(25)
                             VStack(alignment: .leading) {
                                 Text("Widget preview").fontWeight(.bold).multilineTextAlignment(.leading)

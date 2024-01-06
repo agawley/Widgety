@@ -7,8 +7,32 @@
 
 import SwiftUI
 
+struct WidgetToggleStyle: ToggleStyle {
+    var entry: AffirmationEntry
+    
+    func makeBody(configuration: Configuration) -> some View {
+        let currentAffirmation = entry.affirmations[entry.index]
+        let nextAffirmation = entry.affirmations[(entry.index + 1) % entry.affirmations.count]
+        configuration.isOn
+        ? AffirmationWidgetInnerView(entry: nextAffirmation)
+            : AffirmationWidgetInnerView(entry: currentAffirmation)
+    }
+}
+
 struct AffirmationWidgetView: View {
-    var entry: AffirmationEntry?
+    var entry: AffirmationEntry
+    
+    var body: some View {
+        ZStack {
+            Toggle(isOn: false, intent: NextAffirmationIntent()) {
+                Text("Not shown")
+            }.toggleStyle(WidgetToggleStyle(entry: entry)).frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+    }
+}
+
+struct AffirmationWidgetInnerView: View {
+    var entry: Affirmation?
     
     var body: some View {
         
