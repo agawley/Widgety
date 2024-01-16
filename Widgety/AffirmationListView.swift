@@ -34,7 +34,7 @@ struct AffirmationListView: View {
             }
             Button {
                 withAnimation {
-                    items.append(Affirmation(id:UUID(), phrase: "Be good to yourself today", color: ThemeColor.allCases.randomElement()!))
+                    items.append(Affirmations.defaultAffirmations.randomElement()!)
                     selectedIndex = items.count - 1
                 }
             } label: {

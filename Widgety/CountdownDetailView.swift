@@ -57,19 +57,21 @@ struct CountdownDetailView: View {
                                 Text(o.rawValue.capitalized)
                             }
                         }
-                        HStack() {
-                            Spacer()
-                            HStack {
-                                CountdownSmallWidgetView(entry: items[selectedIndex].timelineEntry(entryDate: Date())).padding([.horizontal], 5).padding([.vertical], 10)
-                            }.frame(width: 175, height: 175).background(Theme.bgColor(theme: items[selectedIndex].color)).cornerRadius(25)
-                            VStack(alignment: .leading) {
-                                Text("Widget preview").fontWeight(.bold).multilineTextAlignment(.leading)
-                                Text("To install, go to your homescreen, long press and then tap the + button.").multilineTextAlignment(.leading).font(.caption)
-                                Text("Then 'Edit Widget' and select this event.").multilineTextAlignment(.leading).font(.caption)
-                            }.frame(maxWidth: 200)
-                            
-                            Spacer()
-                        }.padding([.top,.bottom], 20)
+                        VStack() {
+                            HStack() {
+                                Spacer()
+                                HStack {
+                                    CountdownSmallWidgetView(entry: items[selectedIndex].timelineEntry(entryDate: Date())).padding([.horizontal], 5)
+                                }.frame(width: 160, height: 160).background(Theme.bgColor(theme: items[selectedIndex].color)).cornerRadius(25)
+                                VStack(alignment: .leading) {
+                                    Text("To install, go to your homescreen, long press and then tap the + button.").multilineTextAlignment(.leading).font(.caption)
+                                    Spacer().frame(height: 10)
+                                    Text("Once installed long press and 'Edit Widget' to select this event.").multilineTextAlignment(.leading).font(.caption)
+                                }.frame(maxWidth: 200)
+                                
+                                Spacer()
+                            }.padding([.top,.bottom], 10)
+                        }
                     }
                     Spacer()
                 }

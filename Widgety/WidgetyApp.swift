@@ -58,6 +58,8 @@ struct WidgetyApp: App {
             }
         }.onChange(of: scenePhase) {
             if scenePhase == .background {
+                Affirmations.defaults.saveItems()
+                Events.getDefault().saveItems()
                 WidgetCenter.shared.reloadAllTimelines()
             }
         }

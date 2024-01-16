@@ -23,7 +23,11 @@ struct CountdownContentView: View {
         .navigationSplitViewStyle(.balanced)
         .onAppear() {
             updateColumnVisibility()
-        }.onOpenURL  { url in
+        }
+        .onDisappear() {
+            events.saveItems()
+        }
+        .onOpenURL  { url in
             guard let id = url.countdownIdentifier else {
               return
             }

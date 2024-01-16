@@ -49,16 +49,14 @@ class Affirmations {
     private var timer = Timer()
     private let key = "gawley.affirmations"
     
-    var items = [Affirmation]() {
-        didSet {
-            timer.invalidate()
-            timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false, block: { _ in
-                if let encoded = try? JSONEncoder().encode(self.items) {
-                    UserDefaults(suiteName: "group.org.gawley.widgety")!.set(encoded, forKey: self.key)
-                }
-            })
+    var items: [Affirmation] = []
+    
+    
+    func saveItems() {
+        print("Save affirmations")
+        if let encoded = try? JSONEncoder().encode(self.items) {
+            UserDefaults(suiteName: "group.org.gawley.widgety")!.set(encoded, forKey: self.key)
         }
-        
     }
     
     init() {

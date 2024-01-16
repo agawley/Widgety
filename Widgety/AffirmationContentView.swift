@@ -26,6 +26,9 @@ struct AffirmationContentView: View {
         .onAppear() {
             updateColumnVisibility()
         }
+        .onDisappear() {
+            affirmations.saveItems()
+        }
     }
     
     private func updateColumnVisibility() {

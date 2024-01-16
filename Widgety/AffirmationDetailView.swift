@@ -23,28 +23,32 @@ struct AffirmationDetailView: View {
                                 Text(c.rawValue.capitalized)
                             }
                         }
-                        HStack() {
-                            Spacer()
-                            HStack {
-                                AffirmationWidgetView(entry: AffirmationEntry(affirmations: items, date: .now, index: selectedIndex)).padding([.horizontal], 5).padding([.vertical], 10)
-                            }.frame(width: 175, height: 175).background(Theme.bgColor(theme: items[selectedIndex].color)).cornerRadius(25)
-                            VStack(alignment: .leading) {
-                                Text("Widget preview").fontWeight(.bold).multilineTextAlignment(.leading)
-                                Text("To install, go to your homescreen, long press and then tap the + button.").multilineTextAlignment(.leading).font(.caption)
-                            }.frame(maxWidth: 200)
-                            
-                            Spacer()
-                        }.padding([.top,.bottom], 20)
+                        VStack() {
+                            Text("Preview").fontWeight(.bold)
+                            HStack() {
+                                Spacer()
+                                HStack {
+                                    AffirmationWidgetView(entry: AffirmationEntry(affirmations: items, date: .now, index: selectedIndex)).padding([.horizontal], 5)
+                                }.frame(width: 160, height: 160).background(Theme.bgColor(theme: items[selectedIndex].color)).cornerRadius(25)
+                                VStack(alignment: .leading) {
+                                    Text("To install, go to your homescreen, long press and then tap the + button.").multilineTextAlignment(.leading).font(.caption)
+                                    Spacer().frame(height: 10)
+                                    Text("Tap the widget to cycle through affirmations. Or just wait til tomorrow!").multilineTextAlignment(.leading).font(.caption)
+                                }.frame(maxWidth: 200)
+                                
+                                Spacer()
+                            }
+                        }.padding([.top,.bottom], 10)
                     }
                     
                     Spacer()
                     
                 }
             } else {
-                Text("Select an event to preview / edit").font(.title)
+                Text("Select an affirmation to preview / edit").font(.title)
             }
         }
-        .navigationTitle(selectedIndex != nil ? "Edit event" : "")
+        .navigationTitle(selectedIndex != nil ? "Edit affirmation" : "")
         .background(selectedIndex != nil ? Color(UIColor.systemGroupedBackground) : Color(UIColor.systemBackground))
     }
 }

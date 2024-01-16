@@ -115,16 +115,13 @@ class Events {
     private var timer = Timer()
     private let key = "gawley.events"
     
-    var items = [Event]() {
-        didSet {
-            timer.invalidate()
-            timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false, block: { _ in
-                if let encoded = try? JSONEncoder().encode(self.items) {
-                    UserDefaults(suiteName: "group.org.gawley.widgety")!.set(encoded, forKey: self.key)
-                }
-            })
+    var items: [Event] = []
+    
+    func saveItems() {
+        print("Save events")
+        if let encoded = try? JSONEncoder().encode(self.items) {
+            UserDefaults(suiteName: "group.org.gawley.widgety")!.set(encoded, forKey: self.key)
         }
-        
     }
     
     init() {
