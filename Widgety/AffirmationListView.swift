@@ -17,14 +17,14 @@ struct AffirmationListView: View {
         List(selection: $selectedIndex) {
             DescriptiveSectionView(text: "The Affirmation Widget will show a different phrase each day.")
             Section{
-                ForEach(items.indices, id: \.self) { index in
+                ForEach($items) { $item in
                     HStack {
                         Circle()
-                            .fill(Theme.bgColor(theme: items[index].color))
+                            .fill(Theme.bgColor(theme: item.color))
                             .frame(width: 10 , height: 10)
-                        Text(items[index].phrase)
+                        Text(item.phrase)
                     }.onTapGesture {
-                        selectedIndex = index
+                        selectedIndex = items.firstIndex(of: item)!
                     }
                 }.onDelete { index in
                     items.remove(atOffsets: index)
@@ -40,6 +40,6 @@ struct AffirmationListView: View {
             } label: {
                 Label("Add", systemImage: "plus")
             }
-        }.id(UUID())
+        }
     }
 }

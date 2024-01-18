@@ -34,14 +34,14 @@ struct CountdownListView: View {
         List(selection: $selectedIndex) {
             DescriptiveSectionView(text: "You can show each countdown in its own widget. Make as many as you want!")
             Section{
-                ForEach(items.indices, id: \.self) { index in
+                ForEach($items) { $item in
                     HStack {
                         Circle()
-                            .fill(Theme.bgColor(theme: items[index].color))
+                            .fill(Theme.bgColor(theme: item.color))
                             .frame(width: 10 , height: 10)
-                        Text(items[index].name)
+                        Text(item.name)
                     }.onTapGesture {
-                        selectedIndex = index
+                        selectedIndex = items.firstIndex(of: item)!
                     }
                 }.onDelete { index in
                     items.remove(atOffsets: index)
