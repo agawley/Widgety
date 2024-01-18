@@ -77,6 +77,6 @@ struct CountdownWidget: Widget {
 #Preview(as: .systemMedium) {
     CountdownWidget()
 } timeline: {
-    EventEntry(id: UUID(), name: "end of the world again", daysUntil: 1200, date: .now, color: ThemeColor.red)
+    EventEntry(id: UUID(), name: "end of the world again", daysUntil: 1200, date: .now, color: ThemeColor.orange)
     EventEntry(id: UUID(), name: "end of the world",daysUntil: 0, date: .now, color: ThemeColor.purple)
 }
