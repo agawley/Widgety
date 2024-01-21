@@ -40,7 +40,10 @@ struct CountdownListView: View {
                             .fill(Theme.bgColor(theme: item.color))
                             .frame(width: 10 , height: 10)
                         Text(item.name)
-                    }.onTapGesture {
+                        Spacer()
+                    }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
                         selectedIndex = items.firstIndex(of: item)!
                     }
                 }.onDelete { index in

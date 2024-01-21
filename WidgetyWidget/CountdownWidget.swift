@@ -48,7 +48,7 @@ struct CountdownWidgetEntryView : View {
         case .systemSmall:
             CountdownSmallWidgetView(entry: entry).widgetURL(URL(string: "widgety://countdowns?\(entry.id.uuidString)"))
         case .systemMedium:
-            CountdownMediumWidgetView(entry: entry).widgetURL(URL(string: "widgety://countdowns"))
+            CountdownMediumWidgetView(entry: entry).widgetURL(URL(string: "widgety://countdowns?\(entry.id.uuidString)"))
         default:
             Text("Unsupported")
         }

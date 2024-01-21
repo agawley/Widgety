@@ -34,7 +34,7 @@ struct CountdownContentView: View {
             guard let index = events.items.firstIndex(where: { $0.id.uuidString == id }) else {
                 return
             }
-           selectedIndex = index
+            selectedIndex = index
         }
     }
     

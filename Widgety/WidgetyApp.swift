@@ -13,19 +13,19 @@ enum TabIdentifier: Hashable {
 }
 
 extension URL {
-  var isDeeplink: Bool {
-    return scheme == "widgety"
-  }
-
-  var tabIdentifier: TabIdentifier? {
-    guard isDeeplink else { return nil }
-
-    switch host {
-    case "countdowns": return .countdowns
-    case "affirmations": return .affirmations
-    default: return nil
+    var isDeeplink: Bool {
+        return scheme == "widgety"
     }
-  }
+
+    var tabIdentifier: TabIdentifier? {
+        guard isDeeplink else { return nil }
+
+        switch host {
+            case "countdowns": return .countdowns
+            case "affirmations": return .affirmations
+            default: return nil
+        }
+    }
     
     var countdownIdentifier: String? {
         guard tabIdentifier == .countdowns else { return nil }
