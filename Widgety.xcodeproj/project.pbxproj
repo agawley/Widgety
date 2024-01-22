@@ -10,18 +10,18 @@
 		401B68B12AFA7C7500281D6B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B68B02AFA7C7500281D6B /* Theme.swift */; };
 		401B68B22AFA7C7500281D6B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B68B02AFA7C7500281D6B /* Theme.swift */; };
 		401B68B52AFBD7BE00281D6B /* CountdownSmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B68B32AFBD7BE00281D6B /* CountdownSmallWidgetView.swift */; };
-		401C0FFA2B0FBE7300EE6CF0 /* CountdownListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FF92B0FBE7300EE6CF0 /* CountdownListView.swift */; };
 		401C0FFD2B10E22400EE6CF0 /* CountdownMediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C0FFB2B10E22300EE6CF0 /* CountdownMediumWidgetView.swift */; };
 		4033C3D62B49845700103933 /* NextAffirmationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033C3D52B49845600103933 /* NextAffirmationIntent.swift */; };
 		4033C3D72B49845700103933 /* NextAffirmationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033C3D52B49845600103933 /* NextAffirmationIntent.swift */; };
 		40393B6D2B2DBE5900F91AD7 /* Affirmations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */; };
 		40393B702B2DC26B00F91AD7 /* AffirmationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6F2B2DC26B00F91AD7 /* AffirmationWidget.swift */; };
 		40393B732B2DC49D00F91AD7 /* AffirmationWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */; };
-		40393B772B2DCDEF00F91AD7 /* AffirmationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B762B2DCDEF00F91AD7 /* AffirmationListView.swift */; };
 		40393B792B2DD01F00F91AD7 /* AffirmationContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B782B2DD01F00F91AD7 /* AffirmationContentView.swift */; };
 		40393B7B2B2DD0B800F91AD7 /* AffirmationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B7A2B2DD0B800F91AD7 /* AffirmationDetailView.swift */; };
 		40393B7C2B2DD12B00F91AD7 /* AffirmationWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */; };
 		40393B7D2B2DF62200F91AD7 /* Affirmations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */; };
+		404052C32B5E8B210038BDEC /* WListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404052C22B5E8B210038BDEC /* WListView.swift */; };
+		404052C52B5E9A020038BDEC /* WNavigationSplitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404052C42B5E9A020038BDEC /* WNavigationSplitListView.swift */; };
 		40C4E7F02AF817D00067CA63 /* WidgetyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E7EF2AF817D00067CA63 /* WidgetyApp.swift */; };
 		40C4E7F22AF817D00067CA63 /* CountdownContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E7F12AF817D00067CA63 /* CountdownContentView.swift */; };
 		40C4E7F42AF817D30067CA63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C4E7F32AF817D30067CA63 /* Assets.xcassets */; };
@@ -66,16 +66,16 @@
 /* Begin PBXFileReference section */
 		401B68B02AFA7C7500281D6B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		401B68B32AFBD7BE00281D6B /* CountdownSmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownSmallWidgetView.swift; sourceTree = "<group>"; };
-		401C0FF92B0FBE7300EE6CF0 /* CountdownListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownListView.swift; sourceTree = "<group>"; };
 		401C0FFB2B10E22300EE6CF0 /* CountdownMediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownMediumWidgetView.swift; sourceTree = "<group>"; };
 		4033C3D52B49845600103933 /* NextAffirmationIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextAffirmationIntent.swift; sourceTree = "<group>"; };
 		40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmations.swift; sourceTree = "<group>"; };
 		40393B6F2B2DC26B00F91AD7 /* AffirmationWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationWidget.swift; sourceTree = "<group>"; };
 		40393B712B2DC49D00F91AD7 /* AffirmationWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationWidgetView.swift; sourceTree = "<group>"; };
-		40393B762B2DCDEF00F91AD7 /* AffirmationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationListView.swift; sourceTree = "<group>"; };
 		40393B782B2DD01F00F91AD7 /* AffirmationContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationContentView.swift; sourceTree = "<group>"; };
 		40393B7A2B2DD0B800F91AD7 /* AffirmationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationDetailView.swift; sourceTree = "<group>"; };
 		40393B7F2B2F4ED300F91AD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		404052C22B5E8B210038BDEC /* WListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WListView.swift; sourceTree = "<group>"; };
+		404052C42B5E9A020038BDEC /* WNavigationSplitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WNavigationSplitListView.swift; sourceTree = "<group>"; };
 		40C4E7EC2AF817D00067CA63 /* Widgety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Widgety.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C4E7EF2AF817D00067CA63 /* WidgetyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetyApp.swift; sourceTree = "<group>"; };
 		40C4E7F12AF817D00067CA63 /* CountdownContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownContentView.swift; sourceTree = "<group>"; };
@@ -119,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				40C4E7F12AF817D00067CA63 /* CountdownContentView.swift */,
-				401C0FF92B0FBE7300EE6CF0 /* CountdownListView.swift */,
 				40C4E8192AF8F5660067CA63 /* CountdownDetailView.swift */,
 				40C4E81B2AF90A980067CA63 /* Events.swift */,
 			);
@@ -140,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				40393B782B2DD01F00F91AD7 /* AffirmationContentView.swift */,
-				40393B762B2DCDEF00F91AD7 /* AffirmationListView.swift */,
 				40393B7A2B2DD0B800F91AD7 /* AffirmationDetailView.swift */,
 				40393B6C2B2DBE5900F91AD7 /* Affirmations.swift */,
 			);
@@ -175,6 +173,8 @@
 				400A7C122B389AF6000A9F99 /* Countdowns */,
 				40393B752B2DCDC500F91AD7 /* Affirmation */,
 				401B68B02AFA7C7500281D6B /* Theme.swift */,
+				404052C22B5E8B210038BDEC /* WListView.swift */,
+				404052C42B5E9A020038BDEC /* WNavigationSplitListView.swift */,
 				40C4E7F32AF817D30067CA63 /* Assets.xcassets */,
 				40C4E7F52AF817D30067CA63 /* Widgety.entitlements */,
 				40C4E7F62AF817D30067CA63 /* Preview Content */,
@@ -325,14 +325,14 @@
 			files = (
 				40393B7B2B2DD0B800F91AD7 /* AffirmationDetailView.swift in Sources */,
 				40C4E81C2AF90A980067CA63 /* Events.swift in Sources */,
-				40393B772B2DCDEF00F91AD7 /* AffirmationListView.swift in Sources */,
 				40393B792B2DD01F00F91AD7 /* AffirmationContentView.swift in Sources */,
 				40C4E7F22AF817D00067CA63 /* CountdownContentView.swift in Sources */,
 				40393B6D2B2DBE5900F91AD7 /* Affirmations.swift in Sources */,
 				40EF22B02B389E12003EF11C /* CountdownSmallWidgetView.swift in Sources */,
 				40393B7C2B2DD12B00F91AD7 /* AffirmationWidgetView.swift in Sources */,
+				404052C32B5E8B210038BDEC /* WListView.swift in Sources */,
 				401B68B12AFA7C7500281D6B /* Theme.swift in Sources */,
-				401C0FFA2B0FBE7300EE6CF0 /* CountdownListView.swift in Sources */,
+				404052C52B5E9A020038BDEC /* WNavigationSplitListView.swift in Sources */,
 				4033C3D62B49845700103933 /* NextAffirmationIntent.swift in Sources */,
 				40C4E81A2AF8F5670067CA63 /* CountdownDetailView.swift in Sources */,
 				40C4E7F02AF817D00067CA63 /* WidgetyApp.swift in Sources */,

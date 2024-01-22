@@ -15,40 +15,36 @@ struct CountdownContentView: View {
     @State private var selectedIndex: Int?
 
     var body: some View {
-        NavigationSplitView(columnVisibility: $columnVisibility) {
-            CountdownListView(items: $events.items, selectedIndex: $selectedIndex).navigationTitle("Countdowns")
-        } detail: {
-            CountdownDetailView(items: $events.items, selectedIndex: selectedIndex)
-                .navigationTitle(selectedIndex != nil ? "Edit event" : "")
-                .navigationBarTitleDisplayMode(.inline)
-        }
-        .navigationSplitViewStyle(.balanced)
-        .onAppear() {
-            updateColumnVisibility()
-        }
-        .onDisappear() {
-            events.saveItems()
-        }
-        .onOpenURL  { url in
-            guard let id = url.countdownIdentifier else {
-              return
+        WNavigationSplitListView(
+            items: $events.items,
+            selectedIndex: $selectedIndex,
+            title: "Countdowns",
+            detailTitle: "Edit countdown",
+            description: "You can show each countdown in its own widget. Make as many as you want!",
+            defaultItem: { Event(id:UUID(), name: "My new event", date: Date(), color: ThemeColor.allCases.randomElement()!) }) { item in
+                HStack {
+                    Circle()
+                        .fill(Theme.bgColor(theme: item.color))
+                        .frame(width: 10 , height: 10)
+                    Text(item.name)
+                }
+            } detailView: {
+                CountdownDetailView(items: $events.items, selectedIndex: selectedIndex)
             }
-            guard let index = events.items.firstIndex(where: { $0.id.uuidString == id }) else {
-                return
+            .onOpenURL  { url in
+                guard let id = url.countdownIdentifier else {
+                  return
+                }
+                guard let index = events.items.firstIndex(where: { $0.id.uuidString == id }) else {
+                    return
+                }
+                selectedIndex = index
             }
-            selectedIndex = index
-        }
+            .onDisappear() {
+                events.saveItems()
+            }
     }
-    
-    private func updateColumnVisibility() {
-            if UIDevice.current.userInterfaceIdiom == .pad {
-                // On iPad, use double column layout
-                columnVisibility = .doubleColumn
-            } else {
-                // In all other cases, let SwiftUI decide automatically
-                columnVisibility =  .automatic
-            }
-        }
+
 }
 
 
