@@ -19,6 +19,8 @@ struct CountdownContentView: View {
             CountdownListView(items: $events.items, selectedIndex: $selectedIndex).navigationTitle("Countdowns")
         } detail: {
             CountdownDetailView(items: $events.items, selectedIndex: selectedIndex)
+                .navigationTitle(selectedIndex != nil ? "Edit event" : "")
+                .navigationBarTitleDisplayMode(.inline)
         }
         .navigationSplitViewStyle(.balanced)
         .onAppear() {

@@ -21,6 +21,8 @@ struct AffirmationContentView: View {
             AffirmationListView(items: $affirmations.items, selectedIndex: $selectedIndex).navigationTitle("Affirmations")
         } detail: {
             AffirmationDetailView(items: $affirmations.items, selectedIndex: selectedIndex)
+                .navigationTitle(selectedIndex != nil ? "Edit affirmation" : "")
+                .navigationBarTitleDisplayMode(.inline)
         }
         .navigationSplitViewStyle(.balanced)
         .onAppear() {

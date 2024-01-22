@@ -48,7 +48,6 @@ struct AffirmationDetailView: View {
                 Text("Select an affirmation to preview / edit").font(.title)
             }
         }
-        .navigationTitle(selectedIndex != nil ? "Edit affirmation" : "")
         .background(selectedIndex != nil ? Color(UIColor.systemGroupedBackground) : Color(UIColor.systemBackground))
     }
 }

@@ -79,7 +79,6 @@ struct CountdownDetailView: View {
                 Text("Select an event to preview / edit").font(.title)
             }
         }
-        .navigationTitle(selectedIndex != nil ? "Edit event" : "")
         .background(selectedIndex != nil ? Color(UIColor.systemGroupedBackground) : Color(UIColor.systemBackground))
     }
 }
